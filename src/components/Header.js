@@ -1,5 +1,4 @@
-import { Box, Image, Text, Avatar } from '@chakra-ui/react'
-// import { } from '@chakra-ui/icons'
+import { Box, Image, Text, Avatar, Button} from '@chakra-ui/react'
 import logo from '../assets/shopee.svg'
 import user from '../assets/user.svg'
 export const Header = () => {
@@ -9,9 +8,9 @@ export const Header = () => {
             p="0.5rem 1rem"
             display='flex'
             justifyContent='space-between'
-            // backgroundColor='lightblue'
             alignItems='center'
             borderBottom='2px solid #EDEDED'
+            position='sticky'
         >
             <Box
                 display="flex"
@@ -29,6 +28,13 @@ export const Header = () => {
                 >
                     ShopNexa
                 </Text>
+            </Box>
+
+            <Box display='flex' gap='1.5rem' fontSize='17px'>
+                <Button p='0' backgroundColor='#fff' _hover={{opacity:'80%'}}>Watches</Button>
+                <Button p='0' backgroundColor='#fff' _hover={{opacity:'80%'}}>Bags</Button>
+                <Button p='0' backgroundColor='#fff' _hover={{opacity:'80%'}}>Clothes</Button>
+                <Button p='0' backgroundColor='#fff' _hover={{opacity:'80%'}}>Shoes</Button>
             </Box>
             <Avatar
                 src={user}
