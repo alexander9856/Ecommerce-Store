@@ -12,15 +12,43 @@ const Text = defineStyleConfig({
             p: '2px',
             fontSize: '18px',
             cursor: 'pointer',
-            _hover:{opacity:"80%"}
+            _hover: { opacity: "80%" }
         },
+        listHeader: {
+            fontWeight: '500',
+            fontSize: 'lg',
+            mb: 2,
+            fontWeight: 'bold',
+            textDecoration: 'underline',
+            textAlign: ['center',"left","left","left"]
+        },
+        footerLink: {
+            _hover:{opacity:'80%'},
+            cursor:'pointer',
+            textAlign: ['center',"left","left","left"]
+        }
     },
 
 });
-
+const Button = defineStyleConfig({
+    variants: {
+        social: {
+            rounded: 'full',
+            w: 8,
+            h: 8,
+            cursor: 'pointer',
+            as: 'a',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'background 0.3s ease',
+        }
+    }
+})
 const theme = extendTheme({
     components: {
-        Text
+        Text,
+        Button
     },
     breakpoints: {
         sm: "30em", // 480px

@@ -66,7 +66,7 @@ export const Header = () => {
                 <Box display={["block", "block", "none", "none"]} >
                     <Box display={showBurger === false ? "none" : "flex"} >
                         <Box
-                            backgroundColor="blackAlpha.500"
+                            backgroundColor="#AFB0B2"
                             width="100vw"
                             color='#fff'
                             pos="fixed"
@@ -77,6 +77,7 @@ export const Header = () => {
                             display="flex"
                             flexDirection="column"
                             textAlign="center"
+                            
                         >
                             <Text variant='mobileMenu'>Watches</Text>
                             <Text variant='mobileMenu'>Bags</Text>
