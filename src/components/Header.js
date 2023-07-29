@@ -1,4 +1,5 @@
-import React from 'react';
+import { useContext } from 'react';
+import { StoreContext } from '../contexts/StoreProvider'
 import {
     Box,
     Flex,
@@ -18,13 +19,18 @@ import {
     Image
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import logo from '../assets/shop_nexus.png'
+import logo from '../assets/shop_nexus.png';
 import { useNavigate } from 'react-router';
 const Links = ['Watches', 'Shoes', 'Clothes', 'Bags'];
 
 export const Header = () => {
+    const { selectedProduct, setSelectedProduct } = useContext(StoreContext)
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const onClickMobileLink = (link) => {
+        setSelectedProduct(link)
+        onClose()
+    }
     return (
         <Box bg={useColorModeValue('gray.100', 'gray.900')} as='header' px={10} pos='sticky' top='0' zIndex='999'>
             <Flex h={'8vh'} alignItems={'center'} justifyContent={'space-between'}>
@@ -39,7 +45,14 @@ export const Header = () => {
                     <Image src={logo} w='65px' h='35px' cursor='pointer' onClick={() => navigate('/')} />
                     <HStack as={'nav'} spacing={4} display={['none', 'none', 'flex']}>
                         {Links.map((link) => (
-                            <Text variant='navLink' key={link}>{link}</Text>
+                            <Text
+                                variant='navLink'
+                                borderBottom={selectedProduct == link ? '2px solid black' : ""}
+                                key={link}
+                                onClick={() => setSelectedProduct(link)}
+                            >
+                                {link}
+                            </Text>
                         ))}
                     </HStack>
                 </HStack>
@@ -60,7 +73,7 @@ export const Header = () => {
                             />
                         </MenuButton>
                         <MenuList zIndex='999'>
-                            <MenuItem>Profile</MenuItem>
+                            <MenuItem >Profile</MenuItem>
                             <MenuItem>Cart</MenuItem>
                             <MenuDivider />
                             <MenuItem>Logout</MenuItem>
@@ -73,7 +86,7 @@ export const Header = () => {
                 <Box pb={4} display={{ md: 'none' }}>
                     <Stack as={'nav'} spacing={4}>
                         {Links.map((link) => (
-                            <Text variant='navLink' key={link}>{link}</Text>
+                            <Text variant='navLink' key={link} onClick={() => onClickMobileLink(link)}>{link}</Text>
                         ))}
                     </Stack>
                 </Box>

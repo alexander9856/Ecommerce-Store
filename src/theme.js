@@ -25,12 +25,15 @@ const Text = defineStyleConfig({
             fontWeight: 'bold',
             letterSpacing: '1.5px',
             fontSize: ['16px', '17px', '18px', '20px'],
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            textAlign: ['center', 'inherit', 'inherit', 'inherit']
         },
         productCount: {
             opacity: '80%',
             fontStyle: "italic",
             fontSize: '14px',
+            textAlign: ['center', 'inherit', 'inherit', 'inherit'],
+            mb: ['2rem', '0', '0']
         }
     },
 
@@ -40,12 +43,12 @@ const Button = defineStyleConfig({
     variants: {
         loadMore: {
             display: 'block',
-            px: ['5rem','6rem','8.5rem'],
+            px: ['5rem', '6rem', '8.5rem'],
             border: '1px solid black',
-            borderRadius:'0px',
-            textAlign:'center',
-            _hover:[{opacity:'80%'},{backgroundColor:'gray.100'}],
-            letterSpacing:'1.5px'
+            borderRadius: '0px',
+            textAlign: 'center',
+            _hover: [{ opacity: '80%' }, { backgroundColor: 'gray.100' }],
+            letterSpacing: '1.5px'
 
         }
     }

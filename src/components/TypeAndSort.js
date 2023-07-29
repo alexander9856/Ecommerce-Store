@@ -6,19 +6,25 @@ import { SortMenu } from './SortMenu';
 
 
 export const TypeAndSort = () => {
-    const { onOpen } = useContext(StoreContext)
+    const { onOpen, selectedProduct } = useContext(StoreContext)
     return (
-        <Flex justify='space-between' width='80%' mx='auto' px='0.6rem'>
-            <Flex direction='column'>
+        <Flex justify={'space-between'}
+            width='80%'
+            mx='auto'
+            px='0.6rem'
+            flexDirection={['column', 'row', 'row']}
+        >
+            <Flex direction='column' mr={[0, '1rem', 0, 0]}>
                 <Text variant='productTitle'>
-                    Watches
+                    {selectedProduct}
                 </Text>
                 <Text variant='productCount'>4,798 products</Text>
             </Flex>
-            <Box display='flex' gap={5}>
+            <Box display='flex' gap={5} mx={['auto', 'auto', 0, 0]}>
                 <Button
                     backgroundColor='#fff'
                     border='3px solid #edf2f7'
+                    fontSize={['14px', 'inherit', 'inherit', 'inherit']}
                     rightIcon={<SmallAddIcon boxSize={5} />}
                     onClick={onOpen}
                 >

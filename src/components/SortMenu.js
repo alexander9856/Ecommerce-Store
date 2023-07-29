@@ -8,6 +8,7 @@ export const SortMenu = () => {
                 backgroundColor='#fff'
                 border='3px solid #edf2f7'
                 _hover={{ opacity: '70%' }}
+                fontSize={['14px', 'inherit', 'inherit', 'inherit']}
                 as={Button} rightIcon={<ChevronDownIcon />}
             >
                 Sort
