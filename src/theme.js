@@ -2,53 +2,33 @@ import { extendTheme, defineStyleConfig } from "@chakra-ui/react";
 
 const Text = defineStyleConfig({
     variants: {
-        menu: {
-            p: '2px',
-            fontSize: '18px',
-            cursor: 'pointer',
-            _hover: [{ opacity: '80%' }, { borderBottom: "1px solid black" }]
-        },
-        mobileMenu: {
-            p: '2px',
-            fontSize: '18px',
-            cursor: 'pointer',
-            _hover: { opacity: "80%" }
-        },
         listHeader: {
             fontWeight: '500',
             fontSize: 'lg',
             mb: 2,
             fontWeight: 'bold',
-            textDecoration: 'underline',
-            textAlign: ['center',"left","left","left"]
+            textAlign: ['center', "left", "left", "left"]
         },
         footerLink: {
-            _hover:{opacity:'80%'},
-            cursor:'pointer',
-            textAlign: ['center',"left","left","left"]
-        }
+            _hover: { opacity: '80%' },
+            cursor: 'pointer',
+            textAlign: ['center', "left", "left", "left"],
+            _hover: { textDecoration: "underline" }
+        },
+        navLink: {
+            px: 2,
+            py: 1,
+            _hover: [{ opacity: '80%' }, { opacity: '80%' }, { borderBottom: '2px solid black' }],
+            cursor: 'pointer'
+        },
     },
 
 });
-const Button = defineStyleConfig({
-    variants: {
-        social: {
-            rounded: 'full',
-            w: 8,
-            h: 8,
-            cursor: 'pointer',
-            as: 'a',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'background 0.3s ease',
-        }
-    }
-})
+
+
 const theme = extendTheme({
     components: {
         Text,
-        Button
     },
     breakpoints: {
         sm: "30em", // 480px

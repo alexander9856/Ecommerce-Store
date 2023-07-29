@@ -1,111 +1,87 @@
-import { Box, Image, Text, Avatar } from '@chakra-ui/react'
-import { HamburgerIcon } from "@chakra-ui/icons";
-import logo from '../assets/shopee.svg'
-import user from '../assets/user.svg'
-import { useState } from 'react'
+import React from 'react';
+import {
+    Box,
+    Flex,
+    Avatar,
+    HStack,
+    Text,
+    IconButton,
+    Button,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuDivider,
+    useDisclosure,
+    useColorModeValue,
+    Stack,
+    Image
+} from '@chakra-ui/react';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import logo from '../assets/shopNexa.png'
+import { useNavigate } from 'react-router';
+const Links = ['Watches', 'Shoes', 'Clothes', 'Bags'];
+
 export const Header = () => {
-    const [showBurger, setShowBurger] = useState(false);
-
-    const onClickBurger = () => setShowBurger(state => !state);
-
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const navigate = useNavigate()
     return (
-        <Box>
-            {(showBurger) && (
-                <Box
-                    w="100vw"
-                    h="100vh"
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    onClick={() => setShowBurger(false)}
-                ></Box>
-            )}
-
-            <Box
-                as='header'
-                p="0.5rem 1.5rem"
-                display='flex'
-                justifyContent='space-between'
-                alignItems='center'
-                borderBottom='2px solid #EDEDED'
-                position='sticky'
-                width='100%'
-                zIndex="999"
-                
-            >
-                {/* logo and title */}
-                <Box
-                    display="flex"
-                    alignItems="center"
-                    cursor="pointer"
-                    _hover={[{ textDecoration: "none" }, { opacity: "80%" }]}
-
-                >
-                    <Image
-                        src={logo}
-                        boxSize="45"
+        <>
+            <Box bg={useColorModeValue('gray.100', 'gray.900')} px={8}>
+                <Flex h={20} alignItems={'center'} justifyContent={'space-between'}>
+                    <IconButton
+                        size={'md'}
+                        icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                        aria-label={'Open Menu'}
+                        display={{ md: 'none' }}
+                        onClick={isOpen ? onClose : onOpen}
                     />
-                    <Text
-                        margin='7px 0px 0px 8px'
-                        fontWeight='bold'
-                        fontSize='19'
-                    >
-                        ShopNexa
-                    </Text>
-                </Box>
+                    <HStack spacing={8} alignItems={'center'}>
+                        <Image src={logo} w="80px" h='80px' cursor='pointer' onClick={() => navigate('/')} />
+                        <HStack as={'nav'} spacing={4} display={['none', 'none', 'flex']}>
+                            {Links.map((link) => (
+                                <Text variant='navLink' key={link}>{link}</Text>
+                            ))}
+                        </HStack>
+                    </HStack>
+                    <Flex alignItems={'center'}>
+                        <Menu>
+                            <MenuButton
+                                as={Button}
+                                rounded={'full'}
+                                variant={'link'}
+                                cursor={'pointer'}
+                                minW={0}
+                            >
+                                <Avatar
+                                    size={'sm'}
+                                    src={
+                                        'https://img.icons8.com/?size=512&id=23264&format=png'
+                                    }
+                                />
+                            </MenuButton>
+                            <MenuList>
+                                <MenuItem>Profile</MenuItem>
+                                <MenuItem>Cart</MenuItem>
+                                <MenuDivider />
+                                <MenuItem>Logout</MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Flex>
+                </Flex>
 
-                {/* desktop menu */}
-                <Box display={["none", "none", "flex", "flex"]} gap='2rem' fontSize='17px' >
-                    <Text variant='menu'>Watches</Text>
-                    <Text variant='menu'>Bags</Text>
-                    <Text variant='menu'>Clothes</Text>
-                    <Text variant='menu'>Shoes</Text>
-                </Box>
-
-                {/* mobile menu */}
-                <Box display={["block", "block", "none", "none"]} >
-                    <Box display={showBurger === false ? "none" : "flex"} >
-                        <Box
-                            backgroundColor="#AFB0B2"
-                            width="100vw"
-                            color='#fff'
-                            pos="fixed"
-                            top="16"
-                            zIndex='10'
-                            left="0"
-                            overflowY="auto"
-                            display="flex"
-                            flexDirection="column"
-                            textAlign="center"
-                            
-                        >
-                            <Text variant='mobileMenu'>Watches</Text>
-                            <Text variant='mobileMenu'>Bags</Text>
-                            <Text variant='mobileMenu'>Clothes</Text>
-                            <Text variant='mobileMenu'>Shoes</Text>
-                        </Box>
+                {isOpen && (
+                    <Box pb={4} display={{ md: 'none' }}>
+                        <Stack as={'nav'} spacing={4}>
+                            {Links.map((link) => (
+                                <Text variant='navLink' key={link}>{link}</Text>
+                            ))}
+                        </Stack>
                     </Box>
-                </Box>
+                )}
+            </Box>
 
-                <Box display="flex">
-                    <HamburgerIcon
-                        display={["block", "block", "none", "none"]}
-                        cursor="pointer"
-                        boxSize="2.2rem"
-                        onClick={onClickBurger}
-                        mr='1rem'
-                    />
-                    <Avatar
-                        src={user}
-                        cursor="pointer"
-                        boxSize="2.2rem"
-                        onClick={() => setShowBurger(false)}
-                        _hover={{ opacity: "80%" }}
-                    />
-                </Box>
-
-            </Box >
-        </Box>
-
-    )
+            <Box p={4}>Main Content Here</Box>
+        </>
+    );
 }

@@ -7,10 +7,9 @@ import {
     Button
 } from '@chakra-ui/react'
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
-
 export const Footer = () => {
     return (
-        <Box bg='gray.900' px="2rem">
+        <Box bg='#2f2f2f' px="2rem" color='#fff'>
             <Container as={Stack} maxW={'6xl'} py={10} display='flex'>
                 <SimpleGrid columns={['1', '2', '2', '4']} spacing={8}>
                     <Stack>
@@ -37,29 +36,30 @@ export const Footer = () => {
                     </Stack>
 
                     <Stack
-                        spacing={6}
+                        spacing={4}
                         textAlign={['center', "left", "left", "left"]}
                         mt={['2rem', '0', '0', '0']}
                     >
-                        <Text>©ShopNexa. All rights reserved</Text>
+                        <Text variant='listHeader' mb="0">ShopNexa</Text>
+                        <Text fontSize='12px' letterSpacing='1.5px'>©All rights reserved.</Text>
                         <Container
                             as={Stack}
                             maxW={'6xl'}
                             p='0'
                             py={4}
-                            direction={{ base: 'column', md: 'row' }}
+                            direction={['column','row']}
                             spacing={4}
                             justify={{ md: 'space-between' }}
                             align={{ md: 'center' }}
                         >
                             <Stack direction={'row'} spacing={6} justifyContent={['center', "left", "left", "left"]}>
-                                <Button label={'Twitter'}>
+                                <Button label={'Twitter'} _hover={{opacity:"70%"}}>
                                     <FaTwitter />
                                 </Button>
-                                <Button label={'YouTube'}>
+                                <Button label={'YouTube'} _hover={{opacity:"70%"}}>
                                     <FaYoutube />
                                 </Button>
-                                <Button label={'Instagram'}>
+                                <Button label={'Instagram'} _hover={{opacity:"70%"}}>
                                     <FaInstagram />
                                 </Button>
                             </Stack>
@@ -69,5 +69,4 @@ export const Footer = () => {
             </Container>
         </Box>
     )
-
 }
