@@ -1,5 +1,5 @@
 import { ItemCard } from "./ItemCard";
-import { Center, Stack } from '@chakra-ui/react';
+import { Center, Stack,Text } from '@chakra-ui/react';
 export const ItemCardList = () => {
     return (
         <Center mt='2rem'>
@@ -21,5 +21,6 @@ export const ItemCardList = () => {
 
             </Stack>
         </Center>
+        
     );
 }

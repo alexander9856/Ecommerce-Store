@@ -36,10 +36,26 @@ const Text = defineStyleConfig({
 
 });
 
+const Button = defineStyleConfig({
+    variants: {
+        loadMore: {
+            display: 'block',
+            px: '8.5rem',
+            border: '1px solid black',
+            borderRadius:'0px',
+            textAlign:'center',
+            _hover:[{opacity:'80%'},{backgroundColor:'gray.100'}],
+            letterSpacing:'1.5px'
+
+        }
+    }
+})
+
 
 const theme = extendTheme({
     components: {
         Text,
+        Button
     },
     breakpoints: {
         sm: "30em", // 480px
