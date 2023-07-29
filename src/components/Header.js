@@ -18,7 +18,7 @@ import {
     Image
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import logo from '../assets/shopNexa.png'
+import logo from '../assets/shop_nexus.png'
 import { useNavigate } from 'react-router';
 const Links = ['Watches', 'Shoes', 'Clothes', 'Bags'];
 
@@ -26,8 +26,8 @@ export const Header = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const navigate = useNavigate()
     return (
-        <Box bg={useColorModeValue('gray.100', 'gray.900')} px={8}>
-            <Flex h={20} alignItems={'center'} justifyContent={'space-between'}>
+        <Box bg={useColorModeValue('gray.100', 'gray.900')} as='header' px={10} pos='sticky' top='0' zIndex='999'>
+            <Flex h={'8vh'} alignItems={'center'} justifyContent={'space-between'}>
                 <IconButton
                     size={'md'}
                     icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -36,7 +36,7 @@ export const Header = () => {
                     onClick={isOpen ? onClose : onOpen}
                 />
                 <HStack spacing={8} alignItems={'center'}>
-                    <Image src={logo} w="80px" h='80px' cursor='pointer' onClick={() => navigate('/')} />
+                    <Image src={logo} w='65px' h='35px' cursor='pointer' onClick={() => navigate('/')} />
                     <HStack as={'nav'} spacing={4} display={['none', 'none', 'flex']}>
                         {Links.map((link) => (
                             <Text variant='navLink' key={link}>{link}</Text>

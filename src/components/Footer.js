@@ -40,7 +40,7 @@ export const Footer = () => {
                         textAlign={['center', "left", "left", "left"]}
                         mt={['2rem', '0', '0', '0']}
                     >
-                        <Text variant='listHeader' mb="0">ShopNexa</Text>
+                        <Text variant='listHeader' mb="0">ShopNexus</Text>
                         <Text fontSize='12px' letterSpacing='2px'>©All rights reserved.</Text>
                         <Container
                             as={Stack}

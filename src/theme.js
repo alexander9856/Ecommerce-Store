@@ -40,7 +40,7 @@ const Button = defineStyleConfig({
     variants: {
         loadMore: {
             display: 'block',
-            px: '8.5rem',
+            px: ['5rem','6rem','8.5rem'],
             border: '1px solid black',
             borderRadius:'0px',
             textAlign:'center',

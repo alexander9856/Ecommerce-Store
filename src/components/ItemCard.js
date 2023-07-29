@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { data } from '../data'
-import { RatingStars } from './RatingStart'
+import { RatingStars } from './RatingStars'
 
 export const ItemCard = () => {
     return (
@@ -24,16 +24,14 @@ export const ItemCard = () => {
                 shadow="lg"
                 position="relative"
             >
-                {data.isNew && (
-                    <Circle size="10px" position="absolute" top={2} right={2} bg="red.200" />
-                )}
+                {data.isNew && (<Circle size="10px" position="absolute" top={2} right={2} bg="blue.200" />)}
 
                 <Image src={data.imageURL} alt={`Picture of ${data.name}`} roundedTop="lg" boxSize='60' mx='auto' />
 
                 <Box p="3">
                     <Box display="flex" alignItems="baseline">
                         {data.isNew && (
-                            <Badge rounded="full" px="2" fontSize="0.5em" colorScheme="red">
+                            <Badge rounded="full" px="2" fontSize="0.5em" color='#fff' colorScheme="blue">
                                 New
                             </Badge>
                         )}
@@ -56,7 +54,7 @@ export const ItemCard = () => {
                             fontSize={'0.8em'}
                         >
                             <chakra.a cursor='pointer' display={'flex'}>
-                                <Icon as={FiShoppingCart} h={5} w={5} alignSelf={'center'} />
+                                <Icon as={FiShoppingCart} h={6} w={6} alignSelf={'center'} />
                             </chakra.a>
                         </Tooltip>
                     </Flex>
@@ -65,7 +63,7 @@ export const ItemCard = () => {
                         <RatingStars rating={data.rating} numReviews={data.numReviews} />
                         <Box fontSize="xl" color='gray.800'>
                             <Box as="span" color='gray.600' fontSize="md">
-                                £{' '}
+                                €{' '}
                             </Box>
                             {data.price.toFixed(2)}
                         </Box>
