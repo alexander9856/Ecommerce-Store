@@ -1,28 +1,23 @@
+import { StoreContext } from '../contexts/StoreProvider'
 import {
     Text,
     Drawer,
     DrawerContent,
-    useDisclosure,
-    RadioGroup,
-    Radio,
     DrawerOverlay,
     DrawerBody,
-    Stack,
     Button,
     DrawerHeader
 } from '@chakra-ui/react'
+import { useContext } from 'react'
 
 export const FilterMenu = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen, onClose } = useContext(StoreContext)
     return (
         <>
-            <Button colorScheme='blue' onClick={onOpen}>
-                Open
-            </Button>
             <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerHeader borderBottomWidth='1px'>Filter</DrawerHeader>
+                    <DrawerHeader borderBottomWidth='1px'>Filter Criteria</DrawerHeader>
                     <DrawerBody>
                         <Text>Price</Text>
                         <Text>Color</Text>

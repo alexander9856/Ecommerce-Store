@@ -1,9 +1,12 @@
-import { Button, Flex, Text, Box } from '@chakra-ui/react'
-import { SmallAddIcon } from '@chakra-ui/icons'
+import { useContext } from 'react';
+import { StoreContext } from '../contexts/StoreProvider'
+import { Button, Flex, Text, Box } from '@chakra-ui/react';
+import { SmallAddIcon } from '@chakra-ui/icons';
+import { SortMenu } from './SortMenu';
 
-import { SortMenu } from './SortMenu'
 
 export const TypeAndSort = () => {
+    const { onOpen } = useContext(StoreContext)
     return (
         <Flex justify='space-between' width='80%' mx='auto' px='0.6rem'>
             <Flex direction='column'>
@@ -17,6 +20,7 @@ export const TypeAndSort = () => {
                     backgroundColor='#fff'
                     border='3px solid #edf2f7'
                     rightIcon={<SmallAddIcon boxSize={5} />}
+                    onClick={onOpen}
                 >
                     Open Filter
                 </Button>
