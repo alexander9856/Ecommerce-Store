@@ -21,6 +21,17 @@ const Text = defineStyleConfig({
             _hover: [{ opacity: '80%' }, { opacity: '80%' }, { borderBottom: '2px solid black' }],
             cursor: 'pointer'
         },
+        productTitle: {
+            fontWeight: 'bold',
+            letterSpacing: '1.5px',
+            fontSize: ['16px', '17px', '18px', '20px'],
+            textTransform: 'uppercase'
+        },
+        productCount: {
+            opacity: '80%',
+            fontStyle: "italic",
+            fontSize: '14px',
+        }
     },
 
 });

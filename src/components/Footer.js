@@ -10,7 +10,7 @@ import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 export const Footer = () => {
     return (
         <Box bg='#2f2f2f' px="2rem" color='#fff'>
-            <Container as={Stack} maxW={'6xl'} py={10} display='flex'>
+            <Container as={Stack} maxW={'6xl'} py={10} display='flex'  px='2.5rem'>
                 <SimpleGrid columns={['1', '2', '2', '4']} spacing={8}>
                     <Stack>
                         <Text variant='listHeader'>Company</Text >
@@ -41,25 +41,25 @@ export const Footer = () => {
                         mt={['2rem', '0', '0', '0']}
                     >
                         <Text variant='listHeader' mb="0">ShopNexa</Text>
-                        <Text fontSize='12px' letterSpacing='1.5px'>©All rights reserved.</Text>
+                        <Text fontSize='12px' letterSpacing='2px'>©All rights reserved.</Text>
                         <Container
                             as={Stack}
                             maxW={'6xl'}
                             p='0'
                             py={4}
-                            direction={['column','row']}
+                            direction={['column', 'row']}
                             spacing={4}
                             justify={{ md: 'space-between' }}
                             align={{ md: 'center' }}
                         >
                             <Stack direction={'row'} spacing={6} justifyContent={['center', "left", "left", "left"]}>
-                                <Button label={'Twitter'} _hover={{opacity:"70%"}}>
+                                <Button label={'Twitter'} _hover={{ opacity: "70%" }}>
                                     <FaTwitter />
                                 </Button>
-                                <Button label={'YouTube'} _hover={{opacity:"70%"}}>
+                                <Button label={'YouTube'} _hover={{ opacity: "70%" }}>
                                     <FaYoutube />
                                 </Button>
-                                <Button label={'Instagram'} _hover={{opacity:"70%"}}>
+                                <Button label={'Instagram'} _hover={{ opacity: "70%" }}>
                                     <FaInstagram />
                                 </Button>
                             </Stack>
