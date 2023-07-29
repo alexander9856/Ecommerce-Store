@@ -80,8 +80,6 @@ export const Header = () => {
                     </Box>
                 )}
             </Box>
-
-            <Box p={4}>Main Content Here</Box>
         </>
     );
 }
