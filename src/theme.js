@@ -36,7 +36,8 @@ const Text = defineStyleConfig({
             mb: ['2rem', '0', '0']
         },
         filterBy:{
-            my:'1rem'
+            my:'1rem',
+            fontWeight:'500'
         }
     },
 

@@ -7,11 +7,12 @@ import {
     SliderFilledTrack,
     SliderThumb,
     NumberInputField,
-    Text
+    Text,
+    Button,
 } from '@chakra-ui/react'
 export const SliderInput = () => {
     const [startingValue, setStartingValue] = useState(0)
-    const [endValue, setEndValue] = useState(20)
+    const [endValue, setEndValue] = useState(100)
 
     const format = (val) => `€` + val
     const parse = (val) => val.replace(/^\$/, '')
@@ -34,6 +35,7 @@ export const SliderInput = () => {
                 focusThumbOnChange={false}
                 value={startingValue}
                 onChange={(startingValue) => setStartingValue(startingValue)}
+                max='500'
 
             >
                 <SliderTrack>
@@ -49,12 +51,22 @@ export const SliderInput = () => {
                 focusThumbOnChange={false}
                 value={endValue}
                 onChange={(endValue) => setEndValue(endValue)}
+                max='500'
             >
                 <SliderTrack>
                     <SliderFilledTrack />
                 </SliderTrack>
                 <SliderThumb fontSize='sm' boxSize='32px' children={endValue} />
             </Slider>
-        </Flex>
+
+            <Button
+                mt='2rem'
+                backgroundColor='#fff'
+                border='1px solid black'
+                borderRadius='2px'
+                _hover={[{ opacity: '80%' }, { backgroundColor: 'gray.100' }]}
+            >
+                See Results</Button>
+        </Flex >
     )
 }

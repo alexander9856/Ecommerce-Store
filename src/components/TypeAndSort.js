@@ -27,6 +27,7 @@ export const TypeAndSort = () => {
                     fontSize={['14px', 'inherit', 'inherit', 'inherit']}
                     rightIcon={<SmallAddIcon boxSize={5} />}
                     onClick={onOpen}
+                    _hover={{ opacity: '70%' }}
                 >
                     Open Filter
                 </Button>
