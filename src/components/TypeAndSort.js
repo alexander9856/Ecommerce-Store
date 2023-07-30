@@ -6,7 +6,7 @@ import { SortMenu } from './SortMenu';
 
 
 export const TypeAndSort = () => {
-    const { onOpen, selectedProduct, data, sliced } = useContext(StoreContext)
+    const { onOpen, selectedProduct, categoryProducts, sliced } = useContext(StoreContext)
     return (
         <Flex justify={'space-between'}
             width='80%'
@@ -18,7 +18,7 @@ export const TypeAndSort = () => {
                 <Text variant='productTitle'>
                     {selectedProduct}
                 </Text>
-                <Text variant='productCount'>{sliced.length} / {data[selectedProduct].length} products</Text>
+                <Text variant='productCount'>{sliced.length} / {categoryProducts.length} products</Text>
             </Flex>
             <Box display='flex' gap={5} mx={['auto', 'auto', 0, 0]}>
                 <Button

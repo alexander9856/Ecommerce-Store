@@ -11,7 +11,8 @@ export const StoreProvider = ({ children }) => {
     const [sortCriteria, setSortCriteria] = useState('');
     const [paginationNum, setPaginationNum] = useState(20);
 
-    let sortedData = sortData(data[selectedProduct], sortCriteria)
+    const categoryProducts = data[selectedProduct]
+    let sortedData = sortData(categoryProducts, sortCriteria)
     const sliced = sortedData.slice(0, paginationNum)
 
     const contextValues = {
@@ -25,7 +26,7 @@ export const StoreProvider = ({ children }) => {
         paginationNum,
         setPaginationNum,
         sliced,
-        data
+        categoryProducts
     };
 
     return (

@@ -3,8 +3,9 @@ import { StoreContext } from '../contexts/StoreProvider'
 import { ItemCard } from "./ItemCard";
 import { Center, Stack, Box, Button } from '@chakra-ui/react';
 export const ItemCardList = () => {
-    const { setPaginationNum, sliced } = useContext(StoreContext)
-
+    const { setPaginationNum, sliced, categoryProducts } = useContext(StoreContext)
+    console.log(categoryProducts)
+    console.log(sliced)
     return (
         <>
             <Center mt='2rem'>
@@ -19,14 +20,18 @@ export const ItemCardList = () => {
                 </Stack>
 
             </Center>
-            <Box display='flex' justifyContent='center' mt="5rem">
-                <Button
-                    variant='loadMore'
-                    onClick={() => setPaginationNum(state => state + 20)}
-                >
-                    Load More
-                </Button>
-            </Box>
+            {categoryProducts.length !== sliced.length && (
+                <Box display='flex' justifyContent='center' mt="5rem">
+
+                    <Button
+                        variant='loadMore'
+                        onClick={() => setPaginationNum(state => state + 20)}
+                    >
+                        Load More
+                    </Button>
+                </Box>
+            )}
+
         </>
     );
 }
