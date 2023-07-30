@@ -6,13 +6,15 @@ export const StoreContext = createContext();
 export const StoreProvider = ({ children }) => {
     const [selectedProduct, setSelectedProduct] = useState('Watches')
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    const [sortCriteria, setSortCriteria] = useState('')
     const contextValues = {
         selectedProduct,
         setSelectedProduct,
         isOpen,
         onOpen,
-        onClose
+        onClose,
+        sortCriteria,
+        setSortCriteria
     };
 
     return (

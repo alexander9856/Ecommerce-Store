@@ -13,8 +13,8 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { RatingStars } from './RatingStars'
 import { discountCalculator } from '../helpers/discountCalculator'
 export const ItemCard = ({ item }) => {
-    const { name, category, rating, oldPrice, newPrice, imageURL, price, isNew, reviews } = item;
-    const discount = discountCalculator(oldPrice, newPrice);
+    const { name, category, rating, oldPrice, imageURL, price, isNew, reviews } = item;
+    const discount = discountCalculator(oldPrice, price);
     const toast = useToast();
     return (
         <Flex alignItems="center" justifyContent="center">
@@ -73,12 +73,9 @@ export const ItemCard = ({ item }) => {
                     <Flex fontSize="md" color='gray.800' gap={3} justify='end'>
                         {price && <Text>€{' '} {price}</Text>}
                         {oldPrice &&
-                            <>
-                                <Text>€{' '} {newPrice?.toFixed(2)}</Text>
-                                <Text textDecoration={'line-through'} color={'#f93131'}>
-                                    €{' '} {oldPrice?.toFixed(2)}
-                                </Text>
-                            </>}
+                            <Text textDecoration={'line-through'} color={'#f93131'}>
+                                €{' '} {oldPrice?.toFixed(2)}
+                            </Text>}
                     </Flex>
                 </Box>
                 <Flex
