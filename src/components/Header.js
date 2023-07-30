@@ -28,7 +28,7 @@ export const Header = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const navigate = useNavigate();
     const onClickMobileLink = (link) => {
-        setSelectedProduct(link)
+        setSelectedProduct(link.toLowerCase())
         onClose()
     }
     return (
@@ -47,9 +47,9 @@ export const Header = () => {
                         {Links.map((link) => (
                             <Text
                                 variant='navLink'
-                                borderBottom={selectedProduct == link ? '2px solid black' : ""}
+                                borderBottom={selectedProduct == link.toLowerCase() ? '2px solid black' : ""}
                                 key={link}
-                                onClick={() => setSelectedProduct(link)}
+                                onClick={() => setSelectedProduct(link.toLowerCase())}
                             >
                                 {link}
                             </Text>

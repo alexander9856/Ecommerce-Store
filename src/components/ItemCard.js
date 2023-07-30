@@ -65,10 +65,11 @@ export const ItemCard = ({ item }) => {
                             fontSize="md"
                             fontWeight="semibold"
                             as="h4"
+                            h='5vh'
                         >
                             {name}
                         </Text>
-                        <Text fontSize='sm' mt='0.3rem' opacity='80%'>{category}</Text>
+                        <Text fontSize='sm' mt='1rem' opacity='80%'>{category}</Text>
                     </Flex>
                     <Flex fontSize="md" color='gray.800' gap={3} justify='end'>
                         {price && <Text>€{' '} {price}</Text>}

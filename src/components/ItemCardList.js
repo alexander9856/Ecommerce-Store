@@ -5,8 +5,8 @@ import { Center, Stack, Box, Button } from '@chakra-ui/react';
 import data from '../data.json';
 import { sortData } from '../helpers/sortData'
 export const ItemCardList = () => {
-    const { sortCriteria } = useContext(StoreContext)
-    let sortedData = sortData(data.shoes, sortCriteria)
+    const { sortCriteria, selectedProduct } = useContext(StoreContext)
+    let sortedData = sortData(data[selectedProduct], sortCriteria)
     return (
         <>
             <Center mt='2rem'>

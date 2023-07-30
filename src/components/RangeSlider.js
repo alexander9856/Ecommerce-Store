@@ -5,13 +5,11 @@ import {
     RangeSliderThumb,
     Flex,
     NumberInput,
-    Slider,
     NumberInputField,
-    Box
 } from '@chakra-ui/react'
 import { useState } from 'react'
 export const SliderRangeInput = () => {
-    const [startPrice, setStartPrice] = useState(20)
+    const [startPrice, setStartPrice] = useState(0)
     const [endPrice, setEndPrice] = useState(100)
 
     const format = (val) => `€` + val;
@@ -34,7 +32,6 @@ export const SliderRangeInput = () => {
                 </NumberInput>
             </Flex>
 
-
             <RangeSlider
                 aria-label={['min', 'max']}
                 min={0}
@@ -49,9 +46,8 @@ export const SliderRangeInput = () => {
                 </RangeSliderTrack>
 
                 <RangeSliderThumb bgColor='grey' index={0} boxSize={5} />
-                <RangeSliderThumb bgColor='grey'  index={1} boxSize={5} />
+                <RangeSliderThumb bgColor='grey' index={1} boxSize={5} />
             </RangeSlider>
         </Flex>
-
     )
 }

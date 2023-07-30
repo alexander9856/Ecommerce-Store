@@ -4,7 +4,7 @@ import { useDisclosure } from '@chakra-ui/react'
 export const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
-    const [selectedProduct, setSelectedProduct] = useState('Watches')
+    const [selectedProduct, setSelectedProduct] = useState('shoes')
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [sortCriteria, setSortCriteria] = useState('')
     const contextValues = {
