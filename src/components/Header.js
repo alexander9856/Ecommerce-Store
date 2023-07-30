@@ -24,11 +24,13 @@ import { useNavigate } from 'react-router';
 const Links = ['Watches', 'Shoes', 'Clothes', 'Bags'];
 
 export const Header = () => {
-    const { selectedProduct, setSelectedProduct } = useContext(StoreContext)
+    const { selectedProduct, setSelectedProduct, setPaginationNum } = useContext(StoreContext)
     const { isOpen, onOpen, onClose } = useDisclosure();
     const navigate = useNavigate();
-    const onClickMobileLink = (link) => {
-        setSelectedProduct(link.toLowerCase())
+
+    const onClickHandler = (link) => {
+        setSelectedProduct(link.toLowerCase());
+        setPaginationNum(20);
         onClose()
     }
     return (
@@ -49,7 +51,7 @@ export const Header = () => {
                                 variant='navLink'
                                 borderBottom={selectedProduct == link.toLowerCase() ? '2px solid black' : ""}
                                 key={link}
-                                onClick={() => setSelectedProduct(link.toLowerCase())}
+                                onClick={() => onClickHandler(link)}
                             >
                                 {link}
                             </Text>
@@ -82,15 +84,17 @@ export const Header = () => {
                 </Flex>
             </Flex>
 
-            {isOpen && (
-                <Box pb={4} display={{ md: 'none' }}>
-                    <Stack as={'nav'} spacing={4}>
-                        {Links.map((link) => (
-                            <Text variant='navLink' key={link} onClick={() => onClickMobileLink(link)}>{link}</Text>
-                        ))}
-                    </Stack>
-                </Box>
-            )}
-        </Box>
+            {
+                isOpen && (
+                    <Box pb={4} display={{ md: 'none' }}>
+                        <Stack as={'nav'} spacing={4}>
+                            {Links.map((link) => (
+                                <Text variant='navLink' key={link} onClick={() => onClickHandler(link)}>{link}</Text>
+                            ))}
+                        </Stack>
+                    </Box>
+                )
+            }
+        </Box >
     );
 }

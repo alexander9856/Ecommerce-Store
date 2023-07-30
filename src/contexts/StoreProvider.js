@@ -15,10 +15,6 @@ export const StoreProvider = ({ children }) => {
     const sortedData = sortData(categoryProducts, sortCriteria);
     const sliced = sortedData.slice(0, paginationNum);
 
-    useEffect(() => {
-        setPaginationNum(20)
-    }, [selectedProduct]);
-
     const contextValues = {
         selectedProduct,
         setSelectedProduct,
