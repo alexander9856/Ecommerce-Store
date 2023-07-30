@@ -5,8 +5,9 @@ import { Center, Stack, Box, Button } from '@chakra-ui/react';
 import data from '../data.json';
 import { sortData } from '../helpers/sortData'
 export const ItemCardList = () => {
-    const { sortCriteria, selectedProduct } = useContext(StoreContext)
-    let sortedData = sortData(data[selectedProduct], sortCriteria)
+    const { sortCriteria, selectedProduct, paginationNum, setPaginationNum } = useContext(StoreContext)
+    let sortedData = sortData(data[selectedProduct], sortCriteria).slice(0, paginationNum)
+
     return (
         <>
             <Center mt='2rem'>
@@ -24,6 +25,7 @@ export const ItemCardList = () => {
             <Box display='flex' justifyContent='center' mt="5rem">
                 <Button
                     variant='loadMore'
+                    onClick={() => setPaginationNum(state => state + 20)}
                 >
                     Load More
                 </Button>
