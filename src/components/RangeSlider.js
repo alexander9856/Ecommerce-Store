@@ -48,8 +48,8 @@ export const SliderRangeInput = () => {
                     <RangeSliderFilledTrack />
                 </RangeSliderTrack>
 
-                <RangeSliderThumb index={0} boxSize={5} />
-                <RangeSliderThumb index={1} boxSize={5} />
+                <RangeSliderThumb bgColor='grey' index={0} boxSize={5} />
+                <RangeSliderThumb bgColor='grey'  index={1} boxSize={5} />
             </RangeSlider>
         </Flex>
 

@@ -28,11 +28,11 @@ export const FilterMenu = () => {
                             <Text variant="filterBy">Color :</Text>
                             <CheckboxGroup>
                                 <Stack spacing={[1, 5]} direction='column' borderBottom='1px solid #e2e8f0' pb='2rem'>
-                                    <Checkbox value='white'>White</Checkbox>
-                                    <Checkbox value='black'>Black</Checkbox>
-                                    <Checkbox value='green'>Green</Checkbox>
-                                    <Checkbox value='blue'>Blue</Checkbox>
-                                    <Checkbox value='yellow'>Yellow</Checkbox>
+                                    <Checkbox value='white' css={`> span:first-of-type {box-shadow: unset}`} >White</Checkbox>
+                                    <Checkbox value='black' css={`> span:first-of-type {box-shadow: unset}`}>Black</Checkbox>
+                                    <Checkbox value='green' css={`> span:first-of-type {box-shadow: unset}`}>Green</Checkbox>
+                                    <Checkbox value='blue' css={`> span:first-of-type {box-shadow: unset}`}>Blue</Checkbox>
+                                    <Checkbox value='yellow' css={`> span:first-of-type {box-shadow: unset}`}>Yellow</Checkbox>
                                 </Stack>
                             </CheckboxGroup>
                             <Text variant="filterBy" mt='2rem'>Price between : </Text>

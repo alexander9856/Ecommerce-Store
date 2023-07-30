@@ -1,26 +1,29 @@
 import { ItemCard } from "./ItemCard";
-import { Center, Stack,Text } from '@chakra-ui/react';
+import { Center, Stack, Box, Button } from '@chakra-ui/react';
+import data from '../data.json'
 export const ItemCardList = () => {
+    console.log(data)
     return (
-        <Center mt='2rem'>
-            <Stack
-                direction={['column', 'column', 'row', 'row']}
-                spacing={10}
-                justify={'center'}
-                flexWrap={'wrap'}
-                w='90%'
-            >
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
+        <>
+            <Center mt='2rem'>
+                <Stack
+                    direction={['column', 'column', 'row', 'row']}
+                    spacing={10}
+                    justify={'center'}
+                    flexWrap={'wrap'}
+                    w='90%'
+                >
+                    {data.shoes.map((x, index) => (<ItemCard key={index} item={x} />))}
+                </Stack>
 
-            </Stack>
-        </Center>
-        
+            </Center>
+            <Box display='flex' justifyContent='center' mt="5rem">
+                <Button
+                    variant='loadMore'
+                >
+                    Load More
+                </Button>
+            </Box>
+        </>
     );
 }

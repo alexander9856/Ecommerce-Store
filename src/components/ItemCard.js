@@ -1,36 +1,31 @@
 import React from 'react';
 import {
     Flex,
-    Circle,
     Box,
     Image,
     Badge,
     Icon,
-    chakra,
-    Tooltip,
     Text,
     Button
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
-import { data } from '../data'
 import { RatingStars } from './RatingStars'
 
-export const ItemCard = () => {
+export const ItemCard = ({ item }) => {
+    const { name, category, rating, oldPrice, newPrice, imageURL, price } = item
     return (
-        <Flex alignItems="center" justifyContent="center" >
+        <Flex alignItems="center" justifyContent="center">
             <Box
                 bg={'white'}
-                maxW="sm"
                 borderWidth="1px"
                 rounded="lg"
                 shadow="lg"
-                position="relative"
             >
 
                 <Box position='relative'>
                     <Image
-                        src={data.imageURL}
-                        alt={`Picture of ${data.name}`}
+                        src={imageURL}
+                        alt={`Picture of ${name}`}
                         roundedTop="lg"
                         boxSize='60'
                         mx='auto'
@@ -50,47 +45,40 @@ export const ItemCard = () => {
                     >
                         -19%
                     </Badge>
-                    {data.isNew && (<Circle size="10px" position="absolute" top={2} right={2} bg="blue.200" />)}
+                    {/* {data.isNew && (
+                        <Badge rounded="full" px="2" fontSize="0.5em" position="absolute" top={2} right={2} color='#fff' colorScheme="blue">
+                            New
+                        </Badge>
+                    )} */}
 
                 </Box>
 
 
-                <Box p="3">
-                    <Box display="flex" alignItems="baseline">
-                        {data.isNew && (
-                            <Badge rounded="full" px="2" fontSize="0.5em" color='#fff' colorScheme="blue">
-                                New
-                            </Badge>
-                        )}
-                    </Box>
-                    <Flex mt="1" justifyContent="space-between" alignContent="center">
+                <Box px="3" pt='1' pb='3'>
+                    <Flex direction='column' maxW='210px'>
                         <Text
                             fontSize="md"
                             fontWeight="semibold"
                             as="h4"
-                            lineHeight="tight"
-                            isTruncated
                         >
-                            {data.brand}
+                            {name}
                         </Text>
-
-                        <Flex fontSize="md" color='gray.800' gap={3}>
-                            <Text>€{' '} {data.price.toFixed(2)}</Text>
-                            <Text textDecoration={'line-through'} color={'#f93131'}>
-                                €{' '} {data.price.toFixed(2)}
-                            </Text>
-                        </Flex>
+                        <Text fontSize='sm' mt='0.3rem' opacity='80%'>{category}</Text>
                     </Flex>
-
-                    <Flex justify='space-between' alignContent="center" mt="0.5rem">
-                        <Text fontSize='sm'>{data.description}</Text>
-                        <RatingStars rating={data.rating} numReviews={data.numReviews} />
+                    <Flex fontSize="md" color='gray.800' gap={3} justify='end'>
+                        {price && <Text>€{' '} {price}</Text>}
+                        {oldPrice &&
+                            <>
+                                <Text>€{' '} {oldPrice?.toFixed(2)}</Text>
+                                <Text textDecoration={'line-through'} color={'#f93131'}>
+                                    €{' '} {newPrice?.toFixed(2)}
+                                </Text>
+                            </>}
                     </Flex>
                 </Box>
                 <Flex
                     justify='center'
                     pb='1rem'
-                    mt='0.7rem'
                 >
                     <Button
                         rightIcon={<Icon as={FiShoppingCart} h={5} w={5} alignSelf={'center'} />}
@@ -104,10 +92,13 @@ export const ItemCard = () => {
                         Add to Card
                     </Button>
                 </Flex>
-
-                <Text ml="2" mb='2' color="gray.600" fontSize="sm" >
-                    {data.numReviews} review{data.numReviews !== 1 ? 's' : ''}
-                </Text>
+                <Flex justify='space-between' mx="2" mb='2'>
+                    <Text color="gray.600" fontSize="sm" >
+                        {/* {data.numReviews !== 1 ? 's' : ''} */}
+                        {24} reviews
+                    </Text>
+                    <RatingStars rating={rating} numReviews={24} />
+                </Flex>
             </Box>
         </Flex>
     );
