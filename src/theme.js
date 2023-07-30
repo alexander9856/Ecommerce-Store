@@ -34,6 +34,9 @@ const Text = defineStyleConfig({
             fontSize: '14px',
             textAlign: ['center', 'inherit', 'inherit', 'inherit'],
             mb: ['2rem', '0', '0']
+        },
+        filterBy:{
+            my:'1rem'
         }
     },
 

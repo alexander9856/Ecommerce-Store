@@ -14,8 +14,8 @@ export const SortMenu = () => {
                 Sort
             </MenuButton>
             <MenuList zIndex='1'>
-                <MenuItem>A-Z</MenuItem>
-                <MenuItem>Z-A</MenuItem>
+                <MenuItem>A - Z</MenuItem>
+                <MenuItem>Z - A</MenuItem>
                 <MenuItem>Price Descending</MenuItem>
                 <MenuItem>Price Ascending</MenuItem>
             </MenuList>
