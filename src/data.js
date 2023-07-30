@@ -6,4 +6,7 @@ export const data = {
     price: 4.5,
     rating: 2.6,
     numReviews: 34,
+    description: 'Air Force 1',
+    color:'white',
+    brand:'Nike'
 };

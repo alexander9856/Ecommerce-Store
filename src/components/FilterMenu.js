@@ -26,7 +26,7 @@ export const FilterMenu = () => {
                     <DrawerBody>
                         <Flex direction='column'>
                             <Text variant="filterBy">Color :</Text>
-                            <CheckboxGroup colorScheme='gray'>
+                            <CheckboxGroup>
                                 <Stack spacing={[1, 5]} direction='column' borderBottom='1px solid #e2e8f0' pb='2rem'>
                                     <Checkbox value='white'>White</Checkbox>
                                     <Checkbox value='black'>Black</Checkbox>
