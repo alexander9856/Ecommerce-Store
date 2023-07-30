@@ -2,11 +2,8 @@ import { useContext } from 'react'
 import { StoreContext } from '../contexts/StoreProvider'
 import { ItemCard } from "./ItemCard";
 import { Center, Stack, Box, Button } from '@chakra-ui/react';
-import data from '../data.json';
-import { sortData } from '../helpers/sortData'
 export const ItemCardList = () => {
-    const { sortCriteria, selectedProduct, paginationNum, setPaginationNum } = useContext(StoreContext)
-    let sortedData = sortData(data[selectedProduct], sortCriteria).slice(0, paginationNum)
+    const { setPaginationNum, sliced } = useContext(StoreContext)
 
     return (
         <>
@@ -18,7 +15,7 @@ export const ItemCardList = () => {
                     flexWrap={'wrap'}
                     w='90%'
                 >
-                    {sortedData.map((x, index) => (<ItemCard key={index} item={x} />))}
+                    {sliced.map((x, index) => (<ItemCard key={index} item={x} />))}
                 </Stack>
 
             </Center>

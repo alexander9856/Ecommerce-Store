@@ -1,5 +1,7 @@
 import { createContext, useState } from 'react';
 import { useDisclosure } from '@chakra-ui/react'
+import { sortData } from '../helpers/sortData'
+import data from '../data.json';
 
 export const StoreContext = createContext();
 
@@ -8,6 +10,9 @@ export const StoreProvider = ({ children }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [sortCriteria, setSortCriteria] = useState('');
     const [paginationNum, setPaginationNum] = useState(20);
+
+    let sortedData = sortData(data[selectedProduct], sortCriteria)
+    const sliced = sortedData.slice(0, paginationNum)
 
     const contextValues = {
         selectedProduct,
@@ -18,7 +23,9 @@ export const StoreProvider = ({ children }) => {
         sortCriteria,
         setSortCriteria,
         paginationNum,
-        setPaginationNum
+        setPaginationNum,
+        sliced,
+        data
     };
 
     return (
