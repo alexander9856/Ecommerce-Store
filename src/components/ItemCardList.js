@@ -1,11 +1,10 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { StoreContext } from '../contexts/StoreProvider'
 import { ItemCard } from "./ItemCard";
 import { Center, Stack, Box, Button } from '@chakra-ui/react';
 export const ItemCardList = () => {
     const { setPaginationNum, sliced, categoryProducts } = useContext(StoreContext)
-    console.log(categoryProducts)
-    console.log(sliced)
+
     return (
         <>
             <Center mt='2rem'>
@@ -22,7 +21,6 @@ export const ItemCardList = () => {
             </Center>
             {categoryProducts.length !== sliced.length && (
                 <Box display='flex' justifyContent='center' mt="5rem">
-
                     <Button
                         variant='loadMore'
                         onClick={() => setPaginationNum(state => state + 20)}

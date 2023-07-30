@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { useDisclosure } from '@chakra-ui/react'
 import { sortData } from '../helpers/sortData'
 import data from '../data.json';
@@ -11,9 +11,13 @@ export const StoreProvider = ({ children }) => {
     const [sortCriteria, setSortCriteria] = useState('');
     const [paginationNum, setPaginationNum] = useState(20);
 
-    const categoryProducts = data[selectedProduct]
-    let sortedData = sortData(categoryProducts, sortCriteria)
-    const sliced = sortedData.slice(0, paginationNum)
+    const categoryProducts = data[selectedProduct];
+    const sortedData = sortData(categoryProducts, sortCriteria);
+    const sliced = sortedData.slice(0, paginationNum);
+
+    useEffect(() => {
+        setPaginationNum(20)
+    }, [selectedProduct]);
 
     const contextValues = {
         selectedProduct,
