@@ -6,7 +6,8 @@ import {
     Badge,
     Icon,
     Text,
-    Button
+    Button,
+    useToast
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { RatingStars } from './RatingStars'
@@ -14,7 +15,7 @@ import { discountCalculator } from '../helpers/discountCalculator'
 export const ItemCard = ({ item }) => {
     const { name, category, rating, oldPrice, newPrice, imageURL, price, isNew, reviews } = item;
     const discount = discountCalculator(oldPrice, newPrice);
-
+    const toast = useToast();
     return (
         <Flex alignItems="center" justifyContent="center">
             <Box
@@ -73,9 +74,9 @@ export const ItemCard = ({ item }) => {
                         {price && <Text>€{' '} {price}</Text>}
                         {oldPrice &&
                             <>
-                                <Text>€{' '} {oldPrice?.toFixed(2)}</Text>
+                                <Text>€{' '} {newPrice?.toFixed(2)}</Text>
                                 <Text textDecoration={'line-through'} color={'#f93131'}>
-                                    €{' '} {newPrice?.toFixed(2)}
+                                    €{' '} {oldPrice?.toFixed(2)}
                                 </Text>
                             </>}
                     </Flex>
@@ -92,6 +93,16 @@ export const ItemCard = ({ item }) => {
                         fontSize='13px'
                         h='4vh'
                         _hover={{ opacity: '70%' }}
+                        onClick={() =>
+                            toast({
+                                title: `${name} added to cart.`,
+                                status: 'success',
+                                duration: 2000,
+                                isClosable: true,
+                                position: 'top',
+                                containerStyle: { fontSize: "13px" }
+                            })
+                        }
                     >
                         Add to Card
                     </Button>
