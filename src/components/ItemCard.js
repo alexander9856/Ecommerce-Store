@@ -10,9 +10,11 @@ import {
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { RatingStars } from './RatingStars'
-
+import { discountCalculator } from '../helpers/discountCalculator'
 export const ItemCard = ({ item }) => {
-    const { name, category, rating, oldPrice, newPrice, imageURL, price } = item
+    const { name, category, rating, oldPrice, newPrice, imageURL, price, isNew, reviews } = item;
+    const discount = discountCalculator(oldPrice, newPrice);
+
     return (
         <Flex alignItems="center" justifyContent="center">
             <Box
@@ -22,7 +24,7 @@ export const ItemCard = ({ item }) => {
                 shadow="lg"
             >
 
-                <Box position='relative'>
+                <Box position='relative' >
                     <Image
                         src={imageURL}
                         alt={`Picture of ${name}`}
@@ -31,30 +33,32 @@ export const ItemCard = ({ item }) => {
                         mx='auto'
 
                     />
-                    <Badge
-                        px='2'
-                        py='1'
-                        fontSize="12px"
-                        color='#fff'
-                        backgroundColor='#f93131'
-                        position='absolute'
-                        bottom={2}
-                        left={2}
-                        borderRadius={0}
-                        letterSpacing='1.5px'
-                    >
-                        -19%
-                    </Badge>
-                    {/* {data.isNew && (
+                    {discount &&
+                        <Badge
+                            px='2'
+                            py='1'
+                            fontSize="12px"
+                            color='#fff'
+                            backgroundColor='#f93131'
+                            position='absolute'
+                            bottom={2}
+                            left={2}
+                            borderRadius={0}
+                            letterSpacing='1.5px'
+                        >
+                            -{discount}%
+                        </Badge>}
+
+                    {isNew && (
                         <Badge rounded="full" px="2" fontSize="0.5em" position="absolute" top={2} right={2} color='#fff' colorScheme="blue">
                             New
                         </Badge>
-                    )} */}
+                    )}
 
                 </Box>
 
 
-                <Box px="3" pt='1' pb='3'>
+                <Box px="3" pt='1' pb='3' >
                     <Flex direction='column' maxW='210px'>
                         <Text
                             fontSize="md"
@@ -94,10 +98,9 @@ export const ItemCard = ({ item }) => {
                 </Flex>
                 <Flex justify='space-between' mx="2" mb='2'>
                     <Text color="gray.600" fontSize="sm" >
-                        {/* {data.numReviews !== 1 ? 's' : ''} */}
-                        {24} reviews
+                        {reviews} review{reviews !== 1 ? 's' : ''}
                     </Text>
-                    <RatingStars rating={rating} numReviews={24} />
+                    <RatingStars rating={rating} />
                 </Flex>
             </Box>
         </Flex>
