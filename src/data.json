@@ -893,20 +893,20 @@
             "rating": 3.9,
             "isNew": false,
             "reviews": 8,
-            "color": "yellow"
+            "color": "golden"
         },
         {
             "id": 3,
             "name": "DIESEL FLAYED - DZ7471",
             "brand": "Diesel",
             "gender": "MEN",
-            "category": "SPORT",
+            "category": "Casual",
             "price": 169,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/z/dz7471_1.jpg",
             "rating": 4.5,
             "isNew": true,
             "reviews": 21,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 4,
@@ -920,55 +920,55 @@
             "rating": 4.2,
             "isNew": false,
             "reviews": 12,
-            "color": "black"
+            "color": "blue"
         },
         {
             "id": 5,
             "name": "Armani Exchange HAMPTON - AX2443",
             "brand": "Armani Exchange",
             "gender": "MEN",
-            "category": "SPORT",
+            "category": "Classic",
             "price": 180,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/x/ax2443-1200x1200.jpg",
             "rating": 4.1,
             "isNew": true,
             "reviews": 19,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 6,
             "name": "PHILIPP PLEIN THE SKULL",
             "brand": "PHILIPP PLEIN",
             "gender": "MEN",
-            "category": "SPORT",
+            "category": "CASUAL",
             "price": 900,
             "oldPrice": 1080,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/m/image_4_1.jpg",
             "rating": 3.8,
             "isNew": true,
             "reviews": 7,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 7,
             "name": "Orient Automatic Diver Sport - RA-AA0810N",
             "brand": "Orient",
             "gender": "MEN",
-            "category": "SPORT",
+            "category": "Classic",
             "price": 120,
             "oldPrice": 260,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/a/ra-aa0810n-1-1000x1000.png",
             "rating": 4.0,
             "isNew": false,
             "reviews": 16,
-            "color": "black"
+            "color": "silver"
         },
         {
             "id": 8,
             "name": "Orient Automatic - RA-AC0M01S",
             "brand": "Orient",
             "gender": "MEN",
-            "category": "SPORT",
+            "category": "Classic",
             "price": 200,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/r/a/ra-ac0m01s.jpg",
             "rating": 4.6,
@@ -1013,13 +1013,13 @@
             "rating": 2.4,
             "isNew": true,
             "reviews": 10,
-            "color": "black"
+            "color": "red"
         },
         {
             "id": 12,
             "name": "Daniel Klein Exclusive - DK12171-2",
             "brand": "Daniel Klein",
-            "gender": "MEN",
+            "gender": "WOMEN",
             "category": "SPORT",
             "price": 500,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/k/dk12171-2-1200x1200.jpg",
@@ -1039,7 +1039,7 @@
             "rating": 2.4,
             "isNew": false,
             "reviews": 10,
-            "color": "black"
+            "color": "yellow"
         },
         {
             "id": 14,
@@ -1047,7 +1047,7 @@
             "brand": "Casio",
             "gender": "MEN",
             "category": "SPORT",
-            "price": 169,
+            "price": 111.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/t/h/thumb11_a100wefg-9aef.jpg",
             "rating": 2.4,
             "isNew": false,
@@ -1059,104 +1059,106 @@
             "name": "Sekonda - S-1611.00",
             "brand": "Sekonda",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "CASUAL",
+            "price": 169.99,
+            "oldPrice": 208,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/-/s-1611.00-1000x1000.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 10,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 16,
             "name": "Sekonda -S-1859.00",
             "brand": "Sekonda",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "oldPrice": 211,
+            "price": 189.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/1/21-02-956_sekonda_01.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 10,
-            "color": "black"
+            "color": "silver"
         },
         {
             "id": 17,
             "name": "Guess Avery - GW0265G11",
             "brand": "Guess",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "price": 409.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/m/image_2023_06_02t07_20_16_533z.png",
             "rating": 2.4,
             "isNew": true,
             "reviews": 29,
-            "color": "black"
+            "color": "silver"
         },
         {
             "id": 18,
             "name": "Pierre Ricaud - P91091.5113Q",
             "brand": "Pierre Ricaud",
-            "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "gender": "WOMEN",
+            "category": "Casual",
+            "price": 240,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/z/e/zegarek-meski-pierre-ricaud-classic-p91091-5113q.jpg",
             "rating": 2.4,
             "isNew": true,
             "reviews": 43,
-            "color": "black"
+            "color": "silver"
         },
         {
             "id": 19,
             "name": "Atlantic Worldmaster -51752.45.39GM",
             "brand": "Atlantic",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "price": 340,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/5/1/51752-45-39gm-1200x1200.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 34,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 20,
             "name": "Atlantic Sealine - 62455.45.51",
             "brand": "Atlantic",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 620,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/6/2/62455-45-51-1200x1200.jpg",
             "rating": 2.4,
             "isNew": true,
             "reviews": 88,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 21,
             "name": "FESTINA F20022/3",
             "brand": "FESTINA ",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 210,
             "imageURL": "https://timer.bg/image/cachewebp/catalog/products/176545/0/F20022-3-1200x1200.webp",
             "rating": 2.4,
             "isNew": false,
             "reviews": 33,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 22,
             "name": "FESTINA F20667/1",
             "brand": "FESTINA ",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 140,
             "imageURL": "https://timer.bg/image/cachewebp/catalog/products/176545/0/F20667-1-1200x1200.webp",
             "rating": 2.4,
             "isNew": true,
             "reviews": 11,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 23,
@@ -1164,38 +1166,39 @@
             "brand": "CASIO",
             "gender": "MEN",
             "category": "SPORT",
-            "price": 169,
+            "oldPrice": 169,
+            "price": 139,
             "imageURL": "https://timer.bg/image/cachewebp/catalog/products/176545/1/GM-5600CL-3ER-1200x1200.webp",
             "rating": 2.4,
             "isNew": false,
             "reviews": 4,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 24,
             "name": "Fossil NEUTRA Chronograph - FS5963",
             "brand": "Fossil ",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "price": 240,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/o/fossil-neutra-fs5963-14155854.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 5,
-            "color": "black"
+            "color": "brown"
         },
         {
             "id": 25,
             "name": "Diesel CLIFFHANGER - DZ2151",
             "brand": "Diesel",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 890,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/z/dz2151-1200x1200.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 1,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 26,
@@ -1203,25 +1206,25 @@
             "brand": "Guess",
             "gender": "MEN",
             "category": "SPORT",
-            "price": 169,
+            "price": 200,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/w/gw0496g2.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 3,
-            "color": "black"
+            "color": "yellow"
         },
         {
             "id": 27,
             "name": "Armani Exchange BANKS - AX7141SET",
             "brand": "Armani Exchange",
             "gender": "MEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 308,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/x/ax7141set_1.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 11,
-            "color": "black"
+            "color": "silver"
         },
         {
             "id": 28,
@@ -1229,25 +1232,25 @@
             "brand": "Guess",
             "gender": "WOMEN",
             "category": "SPORT",
-            "price": 169,
+            "price": 500,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/g/w/gw0060g3-900x900.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 32,
-            "color": "black"
+            "color": "blue"
         },
         {
             "id": 29,
             "name": "Lee Cooper Elegance - LC07342.120",
             "brand": "Lee Cooper",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "CASUAL",
+            "price": 480,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/c/lc07342-120-1200x1200.jpg",
             "rating": 2.4,
             "isNew": true,
             "reviews": 66,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 30,
@@ -1255,103 +1258,104 @@
             "brand": "Lee Cooper",
             "gender": "WOMEN",
             "category": "SPORT",
-            "price": 169,
+            "price": 230,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/c/lc07347-438-1200x1200.jpg",
             "rating": 2.4,
             "isNew": true,
             "reviews": 55,
-            "color": "black"
+            "color": "pink"
         },
         {
             "id": 31,
             "name": "Armani Exchange LOLA - AX5584",
             "brand": "Lee Cooper",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "price": 440,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/x/ax5584-1200x1200.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 45,
-            "color": "black"
+            "color": "pink"
         },
         {
             "id": 32,
             "name": "Daniel Klein Premium - DK11882-3",
             "brand": "Lee Cooper",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "oldPrice": 180,
+            "price": 154,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/k/dk11882-3-700x700.jpg",
             "rating": 2.4,
             "isNew": true,
             "reviews": 10,
-            "color": "black"
+            "color": "silver"
         },
         {
             "id": 33,
             "name": "Daniel Klein Premium - DK11956-7",
             "brand": "Lee Cooper",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "price": 320,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/k/dk11956-7-1200x1200.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 9,
-            "color": "black"
+            "color": "blue"
         },
         {
             "id": 34,
             "name": "Tissot Orinda - T71.3.309.26",
             "brand": "Tissot ",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 979.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/t/_/t.71.3.309.26.jpg",
             "rating": 2.4,
             "isNew": true,
             "reviews": 4,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 35,
             "name": "Tissot T-Maya - T73.3.360.72",
             "brand": "Tissot ",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 1099.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/h/phpthumb_generated_thum_5_55_bnailjpg.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 5,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 36,
             "name": "FOSSIL Scarlette - ES5261",
             "brand": "Tissot ",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Classic",
+            "price": 179.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/e/s/es5261.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 3,
-            "color": "black"
+            "color": "silver"
         },
         {
             "id": 37,
             "name": "Daniel Klein Trendy - DK12047-3",
             "brand": "Daniel Klein Trendy",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "Casual",
+            "price": 140,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/k/dk12047-3-1200x1200.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 8,
-            "color": "black"
+            "color": "pink"
         },
         {
             "id": 38,
@@ -1359,33 +1363,34 @@
             "brand": "Casio",
             "gender": "WOMEN",
             "category": "SPORT",
-            "price": 169,
+            "price": 139.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/u/n/untitled-111.jpg",
             "rating": 2.4,
             "isNew": true,
             "reviews": 11,
-            "color": "black"
+            "color": "white"
         },
         {
             "id": 39,
             "name": "Citizen Eco-Drive - FE1243-83A",
             "brand": "Citizen",
             "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "category": "CASUAL",
+            "oldPrice": 140,
+            "price": 89.99,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/e/fe1243-83a-1200x1200.jpg",
             "rating": 2.4,
             "isNew": false,
             "reviews": 22,
-            "color": "black"
+            "color": "golden"
         },
         {
             "id": 40,
             "name": "Seksy Swarovski CrystalsS-2298.00",
             "brand": "Seksy",
-            "gender": "WOMEN",
-            "category": "SPORT",
-            "price": 169,
+            "gender": "MEN",
+            "category": "CASUAL",
+            "price": 108,
             "imageURL": "https://www.vip-watches.net/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/o/ioio.png",
             "rating": 2.4,
             "isNew": false,

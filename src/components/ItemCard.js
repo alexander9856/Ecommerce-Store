@@ -73,13 +73,18 @@ export const ItemCard = ({ item }) => {
                         </Text>
                         <Text fontSize='sm' mt='1rem' opacity='80%'>{category}</Text>
                     </Flex>
-                    <Flex fontSize="md" color='gray.800' gap={3} justify='end'>
-                        {price && <Text>€{' '} {price.toFixed(2)}</Text>}
+                    <Flex fontSize="md" color='gray.800' gap={1} justify='end'>
+                        <Text>€{' '} {price.toFixed(2)} </Text>
+
                         {oldPrice &&
-                            <Text textDecoration={'line-through'} color={'#f93131'}>
-                                €{' '} {oldPrice?.toFixed(2)}
-                            </Text>}
+                            <>
+                                <Text as='span'>{' /'}</Text>
+                                <Text textDecoration={'line-through'} color={'#f93131'}>
+                                    € {oldPrice?.toFixed(2)}
+                                </Text>
+                            </>}
                     </Flex>
+
                 </Box>
                 <Flex
                     justify='center'

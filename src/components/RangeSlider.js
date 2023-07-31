@@ -6,6 +6,7 @@ import {
     Flex,
     NumberInput,
     NumberInputField,
+    Box,
 } from '@chakra-ui/react'
 import { useState } from 'react'
 export const SliderRangeInput = () => {
@@ -21,33 +22,36 @@ export const SliderRangeInput = () => {
     }
     return (
 
-        <Flex direction='column'>
-            <Flex>
-                <NumberInput maxW='100px' mr='2rem' value={format(startPrice)} onChange={(startPrice) => setStartPrice(parse(startPrice))}>
+        <Flex direction='column' px='1rem'>
+            <Flex justify='space-between' px='0.5rem'>
+                <NumberInput maxW='100px'  value={format(startPrice)} onChange={(startPrice) => setStartPrice(parse(startPrice))}>
                     <NumberInputField />
                 </NumberInput>
 
-                <NumberInput maxW='100px' mr='2rem' value={format(endPrice)} onChange={(endPrice) => setEndPrice(parse(endPrice))}>
+                <NumberInput maxW='100px'  value={format(endPrice)} onChange={(endPrice) => setEndPrice(parse(endPrice))}>
                     <NumberInputField />
                 </NumberInput>
             </Flex>
 
-            <RangeSlider
-                aria-label={['min', 'max']}
-                min={0}
-                max={500}
-                colorScheme='blackAlpha'
-                value={[startPrice, endPrice]}
-                mt='2rem'
-                onChange={(value) => onChangeValue(value)}
-            >
-                <RangeSliderTrack>
-                    <RangeSliderFilledTrack />
-                </RangeSliderTrack>
+            <Box px='0.5rem'>
+                <RangeSlider
+                    aria-label={['min', 'max']}
+                    min={0}
+                    max={500}
+                    colorScheme='blackAlpha'
+                    value={[startPrice, endPrice]}
+                    mt='2rem'
+                    onChange={(value) => onChangeValue(value)}
 
-                <RangeSliderThumb bgColor='grey' index={0} boxSize={5} />
-                <RangeSliderThumb bgColor='grey' index={1} boxSize={5} />
-            </RangeSlider>
+                >
+                    <RangeSliderTrack>
+                        <RangeSliderFilledTrack />
+                    </RangeSliderTrack>
+
+                    <RangeSliderThumb bgColor='grey' index={0} boxSize={5} />
+                    <RangeSliderThumb bgColor='grey' index={1} boxSize={5} />
+                </RangeSlider>
+            </Box>
         </Flex>
     )
 }

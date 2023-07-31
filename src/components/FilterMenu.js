@@ -10,36 +10,38 @@ import {
     CheckboxGroup,
     Stack,
     Button,
-    Flex
+    Flex,
+    color
 } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { SliderRangeInput } from './RangeSlider'
+import { AccordionMenu } from './Accordion'
 
 export const FilterMenu = () => {
-    const { isOpen, onClose } = useContext(StoreContext)
+    const { isOpen, onClose, sortedData } = useContext(StoreContext);
+    const colors = [...new Set(sortedData.map((element) => element.color))];
     return (
         <>
-            <Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
+            <Drawer placement={'left'} onClose={onClose} isOpen={isOpen} >
                 <DrawerOverlay />
-                <DrawerContent>
-                    <DrawerHeader borderBottomWidth='1px'>Filter Criteria</DrawerHeader>
-                    <DrawerBody>
+                <DrawerContent >
+                    <DrawerHeader>Filter Criteria</DrawerHeader>
+                    <DrawerBody px={0} border='none' sx={{
+                        '&::-webkit-scrollbar': {
+                            display: 'none'
+                        },
+                        '&::-webkit-scrollbar-thumb': {
+                            display: 'none'
+                        },
+                    }}>
                         <Flex direction='column'>
-                            <Text variant="filterBy">Color :</Text>
-                            <CheckboxGroup>
-                                <Stack spacing={[1, 5]} direction='column' borderBottom='1px solid #e2e8f0' pb='2rem'>
-                                    <Checkbox value='white' css={`> span:first-of-type {box-shadow: unset}`} >White</Checkbox>
-                                    <Checkbox value='black' css={`> span:first-of-type {box-shadow: unset}`}>Black</Checkbox>
-                                    <Checkbox value='green' css={`> span:first-of-type {box-shadow: unset}`}>Green</Checkbox>
-                                    <Checkbox value='blue' css={`> span:first-of-type {box-shadow: unset}`}>Blue</Checkbox>
-                                    <Checkbox value='yellow' css={`> span:first-of-type {box-shadow: unset}`}>Yellow</Checkbox>
-                                </Stack>
-                            </CheckboxGroup>
-                            <Text variant="filterBy" mt='2rem'>Price between : </Text>
+                            <AccordionMenu colors={colors} />
+                            <Text variant="filterBy" px='1rem'>Price between : </Text>
                             <SliderRangeInput />
-
+                        </Flex>
+                        <Flex justify='center' mt='2rem'>
                             <Button
-                                mt='3rem'
+                                px='5rem'
                                 backgroundColor='#fff'
                                 border='1px solid black'
                                 borderRadius='2px'
@@ -48,6 +50,8 @@ export const FilterMenu = () => {
                                 See Results
                             </Button>
                         </Flex>
+
+
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>
