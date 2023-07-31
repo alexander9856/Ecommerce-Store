@@ -6,7 +6,7 @@ import data from '../data.json';
 export const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
-    const [selectedProduct, setSelectedProduct] = useState('shoes')
+    const [selectedProduct, setSelectedProduct] = useState('watches')
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [sortCriteria, setSortCriteria] = useState('');
     const [paginationNum, setPaginationNum] = useState(20);

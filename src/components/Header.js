@@ -24,14 +24,15 @@ import { useNavigate } from 'react-router';
 const Links = ['Watches', 'Shoes', 'Clothes', 'Bags'];
 
 export const Header = () => {
-    const { selectedProduct, setSelectedProduct, setPaginationNum } = useContext(StoreContext)
+    const { selectedProduct, setSelectedProduct, setPaginationNum, setSortCriteria } = useContext(StoreContext)
     const { isOpen, onOpen, onClose } = useDisclosure();
     const navigate = useNavigate();
 
     const onClickHandler = (link) => {
         setSelectedProduct(link.toLowerCase());
         setPaginationNum(20);
-        onClose()
+        setSortCriteria('');
+        onClose();
     }
     return (
         <Box bg={useColorModeValue('gray.100', 'gray.900')} as='header' px={10} pos='sticky' top='0' zIndex='999'>

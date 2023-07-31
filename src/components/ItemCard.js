@@ -11,7 +11,8 @@ import {
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { RatingStars } from './RatingStars'
-import { discountCalculator } from '../helpers/discountCalculator'
+import { discountCalculator } from '../helpers/discountCalculator';
+
 export const ItemCard = ({ item }) => {
     const { name, category, rating, oldPrice, imageURL, price, isNew, reviews } = item;
     const discount = discountCalculator(oldPrice, price);
@@ -32,6 +33,7 @@ export const ItemCard = ({ item }) => {
                         roundedTop="lg"
                         boxSize='60'
                         mx='auto'
+                        loading='lazy'
 
                     />
                     {discount &&
@@ -72,7 +74,7 @@ export const ItemCard = ({ item }) => {
                         <Text fontSize='sm' mt='1rem' opacity='80%'>{category}</Text>
                     </Flex>
                     <Flex fontSize="md" color='gray.800' gap={3} justify='end'>
-                        {price && <Text>€{' '} {price}</Text>}
+                        {price && <Text>€{' '} {price.toFixed(2)}</Text>}
                         {oldPrice &&
                             <Text textDecoration={'line-through'} color={'#f93131'}>
                                 €{' '} {oldPrice?.toFixed(2)}

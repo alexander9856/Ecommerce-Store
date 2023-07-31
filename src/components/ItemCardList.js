@@ -1,7 +1,9 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { StoreContext } from '../contexts/StoreProvider'
 import { ItemCard } from "./ItemCard";
 import { Center, Stack, Box, Button } from '@chakra-ui/react';
+import { ScrollToTop } from '../components/ScrollToTop';
+
 export const ItemCardList = () => {
     const { setPaginationNum, sliced, categoryProducts } = useContext(StoreContext)
 
@@ -29,6 +31,8 @@ export const ItemCardList = () => {
                     </Button>
                 </Box>
             )}
+            <ScrollToTop />
+
 
         </>
     );
