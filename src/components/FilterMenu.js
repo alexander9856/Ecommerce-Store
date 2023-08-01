@@ -6,12 +6,8 @@ import {
     DrawerOverlay,
     DrawerBody,
     DrawerHeader,
-    Checkbox,
-    CheckboxGroup,
-    Stack,
     Button,
     Flex,
-    color
 } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { SliderRangeInput } from './RangeSlider'

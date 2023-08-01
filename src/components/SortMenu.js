@@ -18,7 +18,7 @@ export const SortMenu = () => {
                 Sort
             </MenuButton>
             <MenuList zIndex='1'>
-                <MenuItem value='nameDesc' onClick={onClickHandler}>A - Z</MenuItem>
+                <MenuItem value='nameDesc'  onClick={onClickHandler}>A - Z</MenuItem>
                 <MenuItem value='nameAsc' onClick={onClickHandler}>Z - A</MenuItem>
                 <MenuItem value='priceDesc' onClick={onClickHandler}>Price Descending</MenuItem>
                 <MenuItem value='priceAsc' onClick={onClickHandler}>Price Ascending</MenuItem>

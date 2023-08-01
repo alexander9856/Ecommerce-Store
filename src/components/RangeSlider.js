@@ -1,3 +1,4 @@
+import { StoreContext } from '../contexts/StoreProvider';
 import {
     RangeSlider,
     RangeSliderTrack,
@@ -8,8 +9,11 @@ import {
     NumberInputField,
     Box,
 } from '@chakra-ui/react'
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
+
 export const SliderRangeInput = () => {
+    const { setPriceBetween } = useContext(StoreContext);
+
     const [startPrice, setStartPrice] = useState(0)
     const [endPrice, setEndPrice] = useState(100)
 
@@ -17,18 +21,26 @@ export const SliderRangeInput = () => {
     const parse = (val) => val.replace(/^\$/, '');
 
     const onChangeValue = (value) => {
-        setStartPrice(value[0])
-        setEndPrice(value[1])
+        setStartPrice(value[0]);
+        setEndPrice(value[1]);
     }
+
+    useEffect(() => {
+        const timerId = setTimeout(() => {
+            setPriceBetween([startPrice, endPrice]);
+        }, 100);
+        return () => clearTimeout(timerId);
+    }, [startPrice, endPrice]);
+
     return (
 
         <Flex direction='column' px='1rem'>
             <Flex justify='space-between' px='0.5rem'>
-                <NumberInput maxW='100px'  value={format(startPrice)} onChange={(startPrice) => setStartPrice(parse(startPrice))}>
+                <NumberInput maxW='100px' value={format(startPrice)} onChange={(startPrice) => setStartPrice(parse(startPrice))}>
                     <NumberInputField />
                 </NumberInput>
 
-                <NumberInput maxW='100px'  value={format(endPrice)} onChange={(endPrice) => setEndPrice(parse(endPrice))}>
+                <NumberInput maxW='100px' value={format(endPrice)} onChange={(endPrice) => setEndPrice(parse(endPrice))}>
                     <NumberInputField />
                 </NumberInput>
             </Flex>

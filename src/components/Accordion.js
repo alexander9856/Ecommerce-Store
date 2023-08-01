@@ -1,3 +1,5 @@
+import { StoreContext } from '../contexts/StoreProvider'
+
 import {
     Accordion,
     AccordionItem,
@@ -10,10 +12,11 @@ import {
     CheckboxGroup,
     Text
 } from '@chakra-ui/react';
-
-const capitalize = (value) =>  value[0].toUpperCase() + value.slice(1)
-
+import { useContext } from 'react'
 export const AccordionMenu = ({ colors }) => {
+    const { updateColorsCriteria } = useContext(StoreContext);
+
+
     return (
         <Accordion defaultIndex={[0]} allowMultiple >
             <AccordionItem  >
@@ -23,8 +26,15 @@ export const AccordionMenu = ({ colors }) => {
                 </AccordionButton>
                 <AccordionPanel p='8px' pl='1rem'>
                     <CheckboxGroup >
-                        <Stack spacing={[1, 2]} direction='column' borderBottom='none'>
-                            {colors.map((x, index) => <Checkbox key={index} value={x} css={`> span:first-of-type {box-shadow: unset}`} >{capitalize(x)}</Checkbox>)}
+                        <Stack spacing={[1, 2]} direction='column' borderBottom='none' onChange={(e) => updateColorsCriteria(e.target.value)}>
+                            {colors.map((x, index) =>
+                                <Checkbox
+                                    key={index}
+                                    value={x}
+                                    css={`> span:first-of-type {box-shadow: unset}`}
+                                >
+                                    {capitalize(x)}
+                                </Checkbox>)}
                         </Stack>
                     </CheckboxGroup>
                 </AccordionPanel>
@@ -32,3 +42,5 @@ export const AccordionMenu = ({ colors }) => {
         </Accordion>
     )
 }
+
+const capitalize = (value) => value[0].toUpperCase() + value.slice(1);

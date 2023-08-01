@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronUpIcon } from '@chakra-ui/icons';
-import { Tooltip } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 export const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -29,18 +29,26 @@ export const ScrollToTop = () => {
     return (
         <>
             {isVisible && (
-                <ChevronUpIcon
+                <Box
                     onClick={scrollToTop}
                     position='fixed'
                     bottom='20px'
-                    right={3}
+                    right={7}
                     zIndex={3}
                     color='white'
                     rounded='full'
-                    boxSize='8'
+                    boxSize='10'
                     backgroundColor='blackAlpha.500'
                     cursor='pointer'
-                />
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
+                    >
+                    <ChevronUpIcon
+                    boxSize='7'
+                    />
+                </Box>
+
             )}
         </>
     );

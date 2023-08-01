@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { useDisclosure } from '@chakra-ui/react'
 import { sortData } from '../helpers/sortData'
 import data from '../data.json';
@@ -6,10 +6,25 @@ import data from '../data.json';
 export const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
-    const [selectedProduct, setSelectedProduct] = useState('watches')
+    // filter menu
     const { isOpen, onOpen, onClose } = useDisclosure();
+    
+    const [selectedProduct, setSelectedProduct] = useState('watches');
     const [sortCriteria, setSortCriteria] = useState('');
     const [paginationNum, setPaginationNum] = useState(20);
+    const [colorsCriteria, setColorsCriteria] = useState([]);
+    const [priceBetween, setPriceBetween] = useState([]);
+
+    const updateColorsCriteria = (data) => {
+        setColorsCriteria(state => {
+            if (state.includes(data)) {
+                return state.filter(item => item !== data);
+            }
+            else {
+                return [...state, data];
+            }
+        });
+    }
 
     const categoryProducts = data[selectedProduct];
     const sortedData = sortData(categoryProducts, sortCriteria);
@@ -26,7 +41,10 @@ export const StoreProvider = ({ children }) => {
         setPaginationNum,
         sliced,
         categoryProducts,
-        sortedData
+        sortedData,
+        updateColorsCriteria,
+        colorsCriteria,
+        setPriceBetween
     };
 
     return (

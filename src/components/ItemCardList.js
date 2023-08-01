@@ -32,8 +32,6 @@ export const ItemCardList = () => {
                 </Box>
             )}
             <ScrollToTop />
-
-
         </>
     );
 }
