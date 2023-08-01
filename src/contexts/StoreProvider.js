@@ -14,8 +14,14 @@ export const StoreProvider = ({ children }) => {
     const [paginationNum, setPaginationNum] = useState(20);
     const [colorsCriteria, setColorsCriteria] = useState([]);
     const categoryProducts = data[selectedProduct];
-    const maxPrice = Math.max(...categoryProducts.map(x => x.price))
-    const [priceBetween, setPriceBetween] = useState([0, maxPrice]);
+
+    const [maxPrice, setMaxPrice] = useState(0)
+    const [priceBetween, setPriceBetween] = useState([0, 0]);
+
+    useEffect(() => {
+        setMaxPrice(Math.max(...categoryProducts.map(x => x.price)))
+        setPriceBetween([0, Math.max(...categoryProducts.map(x => x.price))])
+    }, [categoryProducts]);
 
     const [isFiltered, setIsFiltered] = useState(false)
     const [filtered, setFiltered] = useState("");

@@ -12,7 +12,7 @@ import {
 import { FiShoppingCart } from 'react-icons/fi';
 import { RatingStars } from './RatingStars'
 import { discountCalculator } from '../helpers/discountCalculator';
-
+import { BlurredImage } from './BlurredImage'
 export const ItemCard = ({ item }) => {
     const { name, category, rating, oldPrice, imageURL, price, isNew, reviews } = item;
     const discount = discountCalculator(oldPrice, price);
@@ -27,14 +27,7 @@ export const ItemCard = ({ item }) => {
             >
 
                 <Box position='relative' >
-                    <Image
-                        src={imageURL}
-                        alt={`Picture of ${name}`}
-                        roundedTop="lg"
-                        boxSize='60'
-                        mx='auto'
-                        loading='lazy'
-                    />
+                    <BlurredImage imageURL={imageURL} name={name} />
                     {discount &&
                         <Badge
                             px='2'
