@@ -9,13 +9,12 @@ import {
     NumberInputField,
     Box,
 } from '@chakra-ui/react'
-import { useState, useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 export const SliderRangeInput = () => {
-    const { setPriceBetween } = useContext(StoreContext);
-
-    const [startPrice, setStartPrice] = useState(0)
-    const [endPrice, setEndPrice] = useState(100)
+    const { priceBetween, setPriceBetween, maxPrice } = useContext(StoreContext);
+    const [startPrice, setStartPrice] = useState(priceBetween[0])
+    const [endPrice, setEndPrice] = useState(priceBetween[1])
 
     const format = (val) => `€` + val;
     const parse = (val) => val.replace(/^\$/, '');
@@ -49,7 +48,7 @@ export const SliderRangeInput = () => {
                 <RangeSlider
                     aria-label={['min', 'max']}
                     min={0}
-                    max={500}
+                    max={maxPrice}
                     colorScheme='blackAlpha'
                     value={[startPrice, endPrice]}
                     mt='2rem'

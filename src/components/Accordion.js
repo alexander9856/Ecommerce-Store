@@ -6,7 +6,6 @@ import {
     AccordionIcon,
     AccordionButton,
     AccordionPanel,
-    Box,
     Stack,
     Checkbox,
     CheckboxGroup,
@@ -14,9 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { useContext } from 'react'
 export const AccordionMenu = ({ colors }) => {
-    const { updateColorsCriteria } = useContext(StoreContext);
-
-
+    const { updateColorsCriteria, colorsCriteria } = useContext(StoreContext);
     return (
         <Accordion defaultIndex={[0]} allowMultiple >
             <AccordionItem  >
@@ -25,18 +22,18 @@ export const AccordionMenu = ({ colors }) => {
                     <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel p='8px' pl='1rem'>
-                    <CheckboxGroup >
-                        <Stack spacing={[1, 2]} direction='column' borderBottom='none' onChange={(e) => updateColorsCriteria(e.target.value)}>
-                            {colors.map((x, index) =>
-                                <Checkbox
-                                    key={index}
-                                    value={x}
-                                    css={`> span:first-of-type {box-shadow: unset}`}
-                                >
-                                    {capitalize(x)}
-                                </Checkbox>)}
-                        </Stack>
-                    </CheckboxGroup>
+                    <Stack spacing={[1, 2]} direction='column' borderBottom='none'>
+                        {colors.map((x, index) =>
+                            <Checkbox
+                                value={x}
+                                css={`> span:first-of-type {box-shadow: unset}`}
+                                key={index}
+                                isChecked={colorsCriteria.includes(x)}
+                                onChange={(e) => updateColorsCriteria(e.target.value)}
+                            >
+                                {capitalize(x)}
+                            </Checkbox>)}
+                    </Stack>
                 </AccordionPanel>
             </AccordionItem>
         </Accordion>

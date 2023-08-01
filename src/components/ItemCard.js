@@ -34,7 +34,6 @@ export const ItemCard = ({ item }) => {
                         boxSize='60'
                         mx='auto'
                         loading='lazy'
-
                     />
                     {discount &&
                         <Badge

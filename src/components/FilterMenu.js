@@ -12,16 +12,23 @@ import {
 import { useContext } from 'react'
 import { SliderRangeInput } from './RangeSlider'
 import { AccordionMenu } from './Accordion'
-
+import { filterData } from '../helpers/filterData'
 export const FilterMenu = () => {
-    const { isOpen, onClose, sortedData } = useContext(StoreContext);
-    const colors = [...new Set(sortedData.map((element) => element.color))];
+    const { isOpen, onClose, categoryProducts, setFiltered, colorsCriteria, priceBetween, setIsFiltered } = useContext(StoreContext);
+    const colors = [...new Set(categoryProducts.map((element) => element.color))];
+
+    const onFilterHandler = () => {
+        const filteredData = filterData(categoryProducts, colorsCriteria, priceBetween)
+        setFiltered(filteredData);
+        setIsFiltered(true)
+        onClose();
+    }
     return (
         <>
             <Drawer placement={'left'} onClose={onClose} isOpen={isOpen} >
                 <DrawerOverlay />
                 <DrawerContent >
-                    <DrawerHeader>Filter Criteria</DrawerHeader>
+                    <DrawerHeader p='1rem'>Filter Criteria</DrawerHeader>
                     <DrawerBody px={0} border='none' sx={{
                         '&::-webkit-scrollbar': {
                             display: 'none'
@@ -42,12 +49,11 @@ export const FilterMenu = () => {
                                 border='1px solid black'
                                 borderRadius='2px'
                                 _hover={[{ opacity: '80%' }, { backgroundColor: 'gray.100' }]}
+                                onClick={onFilterHandler}
                             >
                                 See Results
                             </Button>
                         </Flex>
-
-
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>
