@@ -15,16 +15,28 @@ export const StoreProvider = ({ children }) => {
     const [colorsCriteria, setColorsCriteria] = useState([]);
     const categoryProducts = data[selectedProduct];
 
+    const [isFiltered, setIsFiltered] = useState(false)
+    const [filtered, setFiltered] = useState("");
+
     const [maxPrice, setMaxPrice] = useState(0)
     const [priceBetween, setPriceBetween] = useState([0, 0]);
+
+    let dataList = isFiltered ? filtered : categoryProducts;
+    dataList = sortData(dataList, sortCriteria);
+    const sliced = dataList.slice(0, paginationNum);
 
     useEffect(() => {
         setMaxPrice(Math.max(...categoryProducts.map(x => x.price)))
         setPriceBetween([0, Math.max(...categoryProducts.map(x => x.price))])
     }, [categoryProducts]);
 
-    const [isFiltered, setIsFiltered] = useState(false)
-    const [filtered, setFiltered] = useState("");
+    useEffect(() => {
+        (async () => {
+            const res = await fetch('https://64ca74d3700d50e3c704eb35.mockapi.io/api/store/watches')
+            const data = await res.json()
+            console.log(data)
+        })()
+    },[])
 
     const updateColorsCriteria = (data) => {
         setColorsCriteria(state => {
@@ -36,10 +48,6 @@ export const StoreProvider = ({ children }) => {
             }
         });
     }
-
-    let dataList = isFiltered ? filtered : categoryProducts;
-    dataList = sortData(dataList, sortCriteria);
-    const sliced = dataList.slice(0, paginationNum);
 
     const contextValues = {
         selectedProduct,

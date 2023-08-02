@@ -1,8 +1,6 @@
-import React from 'react';
 import {
     Flex,
     Box,
-    Image,
     Badge,
     Icon,
     Text,
@@ -25,7 +23,6 @@ export const ItemCard = ({ item }) => {
                 rounded="lg"
                 shadow="lg"
             >
-
                 <Box position='relative' >
                     <BlurredImage imageURL={imageURL} name={name} />
                     {discount &&
@@ -53,30 +50,30 @@ export const ItemCard = ({ item }) => {
                 </Box>
 
 
-                <Box px="3" pt='1' pb='3' >
-                    <Flex direction='column' maxW='210px'>
+                <Box px="3" pt='1' pb='3' maxWidth='290px'>
+                    <Flex direction='column' >
                         <Text
                             fontSize="md"
                             fontWeight="semibold"
                             as="h4"
-                            h='5vh'
                         >
                             {name}
                         </Text>
-                        <Text fontSize='sm' mt='1rem' opacity='80%'>{category}</Text>
-                    </Flex>
-                    <Flex fontSize="md" color='gray.800' gap={1} justify='end'>
-                        <Text>€{' '} {price.toFixed(2)} </Text>
+                        <Flex justify='space-between'>
+                            <Text fontSize='sm' mt='0.2rem' opacity='80%' fontStyle='italic'>{category}</Text>
+                            <Flex fontSize="md" color='gray.800' gap={1} justify='end'>
+                                <Text fontSize='17px'>€{' '} {price.toFixed(2)} </Text>
 
-                        {oldPrice &&
-                            <>
-                                <Text as='span'>{' /'}</Text>
-                                <Text textDecoration={'line-through'} color={'#f93131'}>
-                                    € {oldPrice?.toFixed(2)}
-                                </Text>
-                            </>}
+                                {oldPrice &&
+                                    <>
+                                        <Text as='span' color='gray.400'>{' /'}</Text>
+                                        <Text textDecoration={'line-through'} fontSize='17px' color={'#f93131'}>
+                                            € {oldPrice?.toFixed(2)}
+                                        </Text>
+                                    </>}
+                            </Flex>
+                        </Flex>
                     </Flex>
-
                 </Box>
                 <Flex
                     justify='center'
@@ -87,8 +84,8 @@ export const ItemCard = ({ item }) => {
                         backgroundColor='#fff'
                         border='1px solid black'
                         borderRadius='2px'
-                        fontSize='13px'
-                        h='4vh'
+                        fontSize='14.5px'
+                        h='4.5vh'
                         _hover={{ opacity: '70%' }}
                         onClick={() =>
                             toast({
@@ -97,7 +94,8 @@ export const ItemCard = ({ item }) => {
                                 duration: 2000,
                                 isClosable: true,
                                 position: 'top',
-                                containerStyle: { fontSize: "13px" }
+                                containerStyle: { borderRadius: '0', fontSize: "13px" }
+
                             })
                         }
                     >

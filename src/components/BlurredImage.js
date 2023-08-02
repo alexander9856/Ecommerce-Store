@@ -16,8 +16,8 @@ export const BlurredImage = ({ imageURL, name }) => {
             {!imageLoaded ? (
                 <Blurhash
                     hash="LMQ]yh%M?vMx?vWBMxoz_NM{D%xu"
-                    width={"240px"}
-                    height={"240px"}
+                    width={"288px"}
+                    height={"288px"}
 
                     resolutionX={32}
                     resolutionY={32}
@@ -28,7 +28,7 @@ export const BlurredImage = ({ imageURL, name }) => {
                     src={imageURL}
                     alt={`Picture of ${name}`}
                     roundedTop="lg"
-                    boxSize='60'
+                    boxSize='72'
                     mx='auto'
                     loading='lazy'
                 />

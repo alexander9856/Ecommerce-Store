@@ -8,7 +8,6 @@ import {
     AccordionPanel,
     Stack,
     Checkbox,
-    CheckboxGroup,
     Text
 } from '@chakra-ui/react';
 import { useContext } from 'react'

@@ -10,9 +10,8 @@ export const TypeAndSort = () => {
 
     return (
         <Flex justify={'space-between'}
-            width='80%'
+            width='84%'
             mx='auto'
-            px='0.6rem'
             flexDirection={['column', 'row', 'row']}
         >
             <Flex direction='column' mr={[0, '1rem', 0, 0]}>

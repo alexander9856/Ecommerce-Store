@@ -35,13 +35,15 @@ const Text = defineStyleConfig({
             textAlign: ['center', 'inherit', 'inherit', 'inherit'],
             mb: ['2rem', '0', '0']
         },
-        filterBy:{
-            my:'1rem',
-            fontWeight:'500'
+        filterBy: {
+            my: '1rem',
+            fontWeight: '500'
         }
     },
 
 });
+
+
 
 const Button = defineStyleConfig({
     variants: {
@@ -62,7 +64,7 @@ const Button = defineStyleConfig({
 const theme = extendTheme({
     components: {
         Text,
-        Button
+        Button,
     },
     breakpoints: {
         sm: "30em", // 480px
