@@ -62,12 +62,12 @@ export const ItemCard = ({ item }) => {
                         <Flex justify='space-between'>
                             <Text fontSize='sm' mt='0.2rem' opacity='80%' fontStyle='italic'>{category}</Text>
                             <Flex fontSize="md" color='gray.800' gap={1} justify='end'>
-                                <Text fontSize='17px'>€{' '} {price.toFixed(2)} </Text>
+                                <Text fontSize='17px' pt='0.5rem'>€{' '} {price.toFixed(2)} </Text>
 
                                 {oldPrice &&
                                     <>
-                                        <Text as='span' color='gray.400'>{' /'}</Text>
-                                        <Text textDecoration={'line-through'} fontSize='17px' color={'#f93131'}>
+                                        <Text pt='0.5rem' as='span' color='gray.400'>{' /'}</Text>
+                                        <Text  pt='0.5rem'textDecoration={'line-through'} fontSize='17px' color={'#f93131'}>
                                             € {oldPrice?.toFixed(2)}
                                         </Text>
                                     </>}

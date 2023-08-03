@@ -1,7 +1,7 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { StoreContext } from '../contexts/StoreProvider'
 import { ItemCard } from "./ItemCard";
-import { Center, Stack, Box, Button } from '@chakra-ui/react';
+import { Center, Stack, Box, Button, Text } from '@chakra-ui/react';
 import { ScrollToTop } from '../components/ScrollToTop';
 
 export const ItemCardList = () => {
@@ -9,15 +9,20 @@ export const ItemCardList = () => {
     return (
         <>
             <Center mt='2rem'>
-                <Stack
-                    direction={['column', 'column', 'row', 'row']}
-                    spacing={10}
-                    justify={'center'}
-                    flexWrap={'wrap'}
-                    w='90%'
-                >
-                    {sliced.map((x, index) => (<ItemCard key={index} item={x} />))}
-                </Stack>
+                {dataList.length > 0 ?
+                    <Stack
+                        direction={['column', 'column', 'row', 'row']}
+                        spacing={10}
+                        justify={'center'}
+                        flexWrap={'wrap'}
+                        w='90%'
+                    >
+                        {sliced.map((x, index) => (<ItemCard key={index} item={x} />))}
+                    </Stack>
+
+                    : <Text mt='10rem' fontSize='22px'>No products with the given criteria</Text>
+                }
+
 
             </Center>
             {dataList.length !== sliced.length && (
