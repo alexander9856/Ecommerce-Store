@@ -30,13 +30,6 @@ export const StoreProvider = ({ children }) => {
         setPriceBetween([0, Math.max(...categoryProducts.map(x => x.price))])
     }, [categoryProducts]);
 
-    useEffect(() => {
-        (async () => {
-            const res = await fetch('https://64ca74d3700d50e3c704eb35.mockapi.io/api/store/watches')
-            const data = await res.json()
-            console.log(data)
-        })()
-    },[])
 
     const updateColorsCriteria = (data) => {
         setColorsCriteria(state => {
@@ -71,7 +64,7 @@ export const StoreProvider = ({ children }) => {
         setColorsCriteria,
         setIsFiltered,
         categoryProducts,
-        maxPrice
+        maxPrice,
     };
 
     return (

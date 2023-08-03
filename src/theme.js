@@ -33,7 +33,7 @@ const Text = defineStyleConfig({
             fontStyle: "italic",
             fontSize: '14px',
             textAlign: ['center', 'inherit', 'inherit', 'inherit'],
-            mb: ['2rem', '0', '0']
+            mb: ['2rem', '2rem', '0']
         },
         filterBy: {
             my: '1rem',

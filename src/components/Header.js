@@ -38,7 +38,7 @@ export const Header = () => {
         setIsFiltered(false);
     }
     return (
-        <Box bg={useColorModeValue('gray.100', 'gray.900')} as='header' px={10} pos='sticky' top='0' zIndex='999'>
+        <Box bg={useColorModeValue('gray.100', 'gray.900')} as='header' px={7} pos='sticky' top='0' zIndex='999'>
             <Flex h={'8vh'} alignItems={'center'} justifyContent={'space-between'}>
                 <IconButton
                     size={'md'}
