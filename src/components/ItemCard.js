@@ -67,7 +67,7 @@ export const ItemCard = ({ item }) => {
                                 {oldPrice &&
                                     <>
                                         <Text pt='0.5rem' as='span' color='gray.400'>{' /'}</Text>
-                                        <Text  pt='0.5rem'textDecoration={'line-through'} fontSize='17px' color={'#f93131'}>
+                                        <Text pt='0.5rem' textDecoration={'line-through'} fontSize='17px' color={'#f93131'}>
                                             € {oldPrice?.toFixed(2)}
                                         </Text>
                                     </>}
@@ -75,10 +75,21 @@ export const ItemCard = ({ item }) => {
                         </Flex>
                     </Flex>
                 </Box>
+
+
+
                 <Flex
-                    justify='center'
-                    pb='1rem'
+                    justify='space-between'
+                    px="3"
+                    mb='2'
+                    alignItems='center'
                 >
+                    <Flex direction='column' mb='0.5rem' gap={0.5}>
+                        <Text color="gray.600" fontSize="sm" >
+                            {reviews} review{reviews !== 1 ? 's' : ''}
+                        </Text>
+                        <RatingStars rating={rating} />
+                    </Flex>
                     <Button
                         rightIcon={<Icon as={FiShoppingCart} h={5} w={5} alignSelf={'center'} />}
                         backgroundColor='#fff'
@@ -101,12 +112,6 @@ export const ItemCard = ({ item }) => {
                     >
                         Add to Card
                     </Button>
-                </Flex>
-                <Flex justify='space-between' mx="2" mb='2'>
-                    <Text color="gray.600" fontSize="sm" >
-                        {reviews} review{reviews !== 1 ? 's' : ''}
-                    </Text>
-                    <RatingStars rating={rating} />
                 </Flex>
             </Box>
         </Flex>
