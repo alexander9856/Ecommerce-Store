@@ -14,7 +14,7 @@ export const TypeAndSort = () => {
             mx='auto'
             flexDirection={['column', 'column', 'row', 'row']}
         >
-            <Flex direction='column' mr={[0, '1rem', 0, 0]} textAlign={['center', 'center', 'inherit', 'inherit']}>
+            <Flex direction='column' gap={1}  textAlign={['center', 'center', 'inherit', 'inherit']}>
                 <Text variant='productTitle'>
                     {selectedProduct}
                 </Text>
