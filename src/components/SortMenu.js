@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { StoreContext } from '../contexts/StoreProvider'
-import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Button, Box } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 export const SortMenu = () => {
@@ -18,11 +18,10 @@ export const SortMenu = () => {
                 backgroundColor='#fff'
                 border='3px solid #edf2f7'
                 _hover={{ opacity: '70%' }}
-                fontSize={['13px', 'inherit', 'inherit', 'inherit']}
+                fontSize={['13px', '13px', 'inherit', 'inherit']}
                 as={Button} rightIcon={<ChevronDownIcon />}
                 textAlign='left'
                 minW='12vw'
-
             >
                 {sortCriteria ? sortValues[sortCriteria] : "Sort by"}
             </MenuButton>

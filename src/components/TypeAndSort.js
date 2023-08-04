@@ -13,6 +13,7 @@ export const TypeAndSort = () => {
             width={['100%', '100%', '70%', '84%']}
             mx='auto'
             flexDirection={['column', 'column', 'row', 'row']}
+            mt={['0','0','1.5rem','1.5rem']}
         >
             <Flex direction='column' gap={1} textAlign={['center', 'center', 'inherit', 'inherit']}>
                 <Text variant='productTitle'>
@@ -24,7 +25,7 @@ export const TypeAndSort = () => {
                 <Button
                     backgroundColor='#fff'
                     border='3px solid #edf2f7'
-                    fontSize={['13px', 'inherit', 'inherit', 'inherit']}
+                    fontSize={['13px', '13px', 'inherit', 'inherit']}
                     rightIcon={<SmallAddIcon boxSize={5} />}
                     onClick={onOpen}
                     _hover={{ opacity: '70%' }}
