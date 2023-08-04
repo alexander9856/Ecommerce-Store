@@ -21,7 +21,7 @@ export const SortMenu = () => {
                 fontSize={['13px', '13px', 'inherit', 'inherit']}
                 as={Button} rightIcon={<ChevronDownIcon />}
                 textAlign='left'
-                minW='12vw'
+                w={[160, 160, 185, 185]}
             >
                 {sortCriteria ? sortValues[sortCriteria] : "Sort by"}
             </MenuButton>

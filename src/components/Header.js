@@ -77,7 +77,7 @@ export const Header = () => {
                                 }
                             />
                         </MenuButton>
-                        <MenuList zIndex='999' minWidth='10vw'>
+                        <MenuList zIndex='999' minW={40} >
                             <MenuItem >Profile</MenuItem>
                             <MenuItem>Cart</MenuItem>
                             <MenuDivider />

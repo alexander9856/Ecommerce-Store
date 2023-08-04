@@ -24,7 +24,8 @@ describe('e2e tests', () => {
         cy.contains('SPORT');
         cy.contains('132.00');
         cy.contains('15 reviews');
-        cy.contains('Add to Card');
+        cy.contains('Add to Card').click();
+        cy.contains('Garmin DESCENT™ MK2S added to cart.')
 
         // click load more
         cy.contains('Load More').click()
