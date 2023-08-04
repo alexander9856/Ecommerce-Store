@@ -1,6 +1,11 @@
 # Ecommerce-Store
+# Running the project locally
 
-This is an Ecommerce-Store-App.
+1. Clone the branch to your computer.
+2. Run `npm install` in the terminal to install all required dependencies.
+3. Run `npm start` in the terminal to run the project locally.
+4. Open the following link to see the project if it hasn't opened automatically: http://localhost:3000/.
+------------------------------------------------------------------------------------------------------------------------------------------
 
 You can:
 - preview products
