@@ -21,7 +21,7 @@ You can:
 
 <img src='Screenshots/home.png'></img>
 <img src='Screenshots/filter.png'></img>
-<img src='Screenshots/LoadMore.png'></img>
+<img src='Screenshots/sorted.png'></img>
 <img src='Screenshots/addedToCart.png'></img>
 
 # 🏆Feedback 
