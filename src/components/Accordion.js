@@ -21,7 +21,7 @@ export const AccordionMenu = ({ colors }) => {
                     <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel p='8px' pl='1rem'>
-                    <Stack spacing={[1, 2]} direction='column' borderBottom='none'>
+                    <Stack spacing={3} direction='column' borderBottom='none'>
                         {colors.map((x, index) =>
                             <Checkbox
                                 value={x}

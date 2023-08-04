@@ -69,7 +69,6 @@ export const Header = () => {
                             rounded={'full'}
                             variant={'link'}
                             cursor={'pointer'}
-                            minW={0}
                         >
                             <Avatar
                                 size={'sm'}
@@ -78,7 +77,7 @@ export const Header = () => {
                                 }
                             />
                         </MenuButton>
-                        <MenuList zIndex='999'>
+                        <MenuList zIndex='999' minWidth='10vw'>
                             <MenuItem >Profile</MenuItem>
                             <MenuItem>Cart</MenuItem>
                             <MenuDivider />

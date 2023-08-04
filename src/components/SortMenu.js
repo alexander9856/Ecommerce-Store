@@ -4,8 +4,14 @@ import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 export const SortMenu = () => {
-    const { setSortCriteria } = useContext(StoreContext)
+    const { setSortCriteria, sortCriteria } = useContext(StoreContext)
     const onClickHandler = (e) => setSortCriteria(e.target.value)
+    const sortValues = {
+        nameAsc: 'A - Z',
+        nameDesc: 'Z - A',
+        priceDesc: 'Price Descending',
+        priceAsc: 'Price Ascending'
+    }
     return (
         <Menu placement="bottom-end">
             <MenuButton
@@ -14,11 +20,13 @@ export const SortMenu = () => {
                 _hover={{ opacity: '70%' }}
                 fontSize={['14px', 'inherit', 'inherit', 'inherit']}
                 as={Button} rightIcon={<ChevronDownIcon />}
+                textAlign='left'
+                w='12vw'
             >
-                Sort
+                {sortCriteria ? sortValues[sortCriteria] : "Sort"}
             </MenuButton>
             <MenuList zIndex='1'>
-                <MenuItem value='nameDesc'  onClick={onClickHandler}>A - Z</MenuItem>
+                <MenuItem value='nameDesc' onClick={onClickHandler}>A - Z</MenuItem>
                 <MenuItem value='nameAsc' onClick={onClickHandler}>Z - A</MenuItem>
                 <MenuItem value='priceDesc' onClick={onClickHandler}>Price Descending</MenuItem>
                 <MenuItem value='priceAsc' onClick={onClickHandler}>Price Ascending</MenuItem>
