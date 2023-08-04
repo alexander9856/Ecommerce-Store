@@ -8,13 +8,13 @@ You can:
 - sort products
 - filter products by 2 criterias - color and price
 - see more items when you click Load More
-- add to cart an item
+- add to cart
 - scroll to top
 
 # 💻Technologies
 
  - ReactJS
- - Chaka UI
+ - Chakra UI
  - Cypress
 
 # 👀Screenshots
@@ -22,6 +22,7 @@ You can:
 <img src='Screenshots/home.png'></img>
 <img src='Screenshots/filter.png'></img>
 <img src='Screenshots/LoadMore.png'></img>
+<img src='Screenshots/addedToCart.png'></img>
 
 # 🏆Feedback 
 
