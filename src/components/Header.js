@@ -89,8 +89,8 @@ export const Header = () => {
 
             {
                 isOpen && (
-                    <Box pb={4} display={{ md: 'none' }} position='fixed' backgroundColor='#edf2f7' width='100%' left='0'>
-                        <Stack as={'nav'} spacing={4} pl='8'>
+                    <Box pb={4} display={{ md: 'none' }} position='fixed' top='12' backgroundColor='#edf2f7' width='100%' left='0'>
+                        <Stack as={'nav'} spacing={4} pl='8' pt='0.8rem'>
                             {Links.map((link) => (
                                 <Text variant='navLink' key={link} onClick={() => onClickHandler(link)}>{link}</Text>
                             ))}
