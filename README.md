@@ -1,6 +1,6 @@
 # Ecommerce-Store
 
-This is a Ecommerce-Store-App.
+This is an Ecommerce-Store-App.
 
 You can:
 - preview products
@@ -9,7 +9,7 @@ You can:
 - filter products by 2 criterias - color and price
 - see more items when you click Load More
 - add to cart an item
-
+- scroll to top
 
 # 💻Technologies
 
@@ -25,4 +25,4 @@ You can:
 
 # 🏆Feedback 
 
-Thank you for viewing my project. If you have any questions, just dm me.
+Thank you for viewing my project. If you have any questions, please dm me.

@@ -100,7 +100,7 @@ export const ItemCard = ({ item }) => {
                         _hover={{ opacity: '70%' }}
                         onClick={() =>
                             toast({
-                                title: `${name} added to cart.`,
+                                title: `${name} added to Cart.`,
                                 status: 'success',
                                 duration: 2000,
                                 isClosable: true,

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { StoreContext } from '../contexts/StoreProvider'
-import { Menu, MenuButton, MenuList, MenuItem, Button, Box } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 export const SortMenu = () => {
