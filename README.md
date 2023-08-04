@@ -19,10 +19,10 @@ You can:
 
 # 👀Screenshots
 
-<img src='Screenshots/home.png'></img>
-<img src='Screenshots/filter.png'></img>
-<img src='Screenshots/sorted.png'></img>
-<img src='Screenshots/addedToCart.png'></img>
+<img src='Screenshots/homePage.png'></img>
+<img src='Screenshots/filtered.png'></img>
+<img src='Screenshots/sortedList.png'></img>
+<img src='Screenshots/addCart.png'></img>
 
 # 🏆Feedback 
 
