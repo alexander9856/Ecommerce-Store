@@ -10,11 +10,11 @@ export const TypeAndSort = () => {
 
     return (
         <Flex justify={'space-between'}
-            width='84%'
+            width={['100%', '100%', '70%', '84%']}
             mx='auto'
             flexDirection={['column', 'column', 'row', 'row']}
         >
-            <Flex direction='column' gap={1}  textAlign={['center', 'center', 'inherit', 'inherit']}>
+            <Flex direction='column' gap={1} textAlign={['center', 'center', 'inherit', 'inherit']}>
                 <Text variant='productTitle'>
                     {selectedProduct}
                 </Text>
@@ -24,7 +24,7 @@ export const TypeAndSort = () => {
                 <Button
                     backgroundColor='#fff'
                     border='3px solid #edf2f7'
-                    fontSize={['14px', '14px', 'inherit', 'inherit']}
+                    fontSize={['13px', 'inherit', 'inherit', 'inherit']}
                     rightIcon={<SmallAddIcon boxSize={5} />}
                     onClick={onOpen}
                     _hover={{ opacity: '70%' }}

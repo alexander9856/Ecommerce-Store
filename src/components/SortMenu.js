@@ -7,8 +7,8 @@ export const SortMenu = () => {
     const { setSortCriteria, sortCriteria } = useContext(StoreContext)
     const onClickHandler = (e) => setSortCriteria(e.target.value)
     const sortValues = {
-        nameAsc: 'A - Z',
-        nameDesc: 'Z - A',
+        nameDesc: 'A - Z',
+        nameAsc: 'Z - A',
         priceDesc: 'Price Descending',
         priceAsc: 'Price Ascending'
     }
@@ -18,12 +18,13 @@ export const SortMenu = () => {
                 backgroundColor='#fff'
                 border='3px solid #edf2f7'
                 _hover={{ opacity: '70%' }}
-                fontSize={['14px', 'inherit', 'inherit', 'inherit']}
+                fontSize={['13px', 'inherit', 'inherit', 'inherit']}
                 as={Button} rightIcon={<ChevronDownIcon />}
                 textAlign='left'
-                w='12vw'
+                minW='12vw'
+
             >
-                {sortCriteria ? sortValues[sortCriteria] : "Sort"}
+                {sortCriteria ? sortValues[sortCriteria] : "Sort by"}
             </MenuButton>
             <MenuList zIndex='1'>
                 <MenuItem value='nameDesc' onClick={onClickHandler}>A - Z</MenuItem>
