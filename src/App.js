@@ -1,8 +1,8 @@
+import { RouterProvider } from "react-router";
+import { router } from "./router";
 function App() {
   return (
-    <div className="App">
-      Eccomerce-store
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
