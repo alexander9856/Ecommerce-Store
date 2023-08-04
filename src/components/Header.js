@@ -38,7 +38,7 @@ export const Header = () => {
         setIsFiltered(false);
     }
     return (
-        <Box bg={useColorModeValue('gray.100', 'gray.900')} as='header' px={7} pos='sticky' top='0' zIndex='999'>
+        <Box backgroundColor='#edf2f7' as='header' px={7} pos='sticky' top='0' zIndex='999'>
             <Flex h={'8vh'} alignItems={'center'} justifyContent={'space-between'}>
                 <IconButton
                     size={'md'}
@@ -90,8 +90,8 @@ export const Header = () => {
 
             {
                 isOpen && (
-                    <Box pb={4} display={{ md: 'none' }}>
-                        <Stack as={'nav'} spacing={4}>
+                    <Box pb={4} display={{ md: 'none' }} position='fixed' backgroundColor='#edf2f7' width='100%' left='0'>
+                        <Stack as={'nav'} spacing={4} pl='8'>
                             {Links.map((link) => (
                                 <Text variant='navLink' key={link} onClick={() => onClickHandler(link)}>{link}</Text>
                             ))}
