@@ -2,9 +2,9 @@ describe('e2e tests', () => {
     //nav
     it('render', () => {
         cy.visit('http://localhost:3000');
-        cy.contains('Watches').should('have.class', 'css-1es8i75');
+        cy.contains('Clothes').should('have.class', 'css-1es8i75');
         cy.contains('Shoes');
-        cy.contains('Clothes');
+        cy.contains('Watches');
         cy.contains('Bags');
 
         cy.get('.css-1toxed2').click()
@@ -13,19 +13,16 @@ describe('e2e tests', () => {
         cy.contains('Logout')
 
         // name/ x out of y   //     sort/filter menu 
-        cy.contains('watches');
+        cy.contains('clothes');
         cy.contains('20 / 40 products');
         cy.contains('Open Filter');
         cy.contains('Sort by');
 
         // item card
-
-        cy.contains('Garmin DESCENT™ MK2S');
+        cy.contains('Clothes').should('have.class', 'css-1es8i75');
+        cy.contains('20 / 40 products');
+        cy.contains('PROUD HOODIE UNISEX');
         cy.contains('SPORT');
-        cy.contains('132.00');
-        cy.contains('15 reviews');
-        cy.contains('Add to Card').click();
-        cy.contains('Garmin DESCENT™ MK2S added to cart.')
 
         // click load more
         cy.contains('Load More').click()
@@ -40,12 +37,14 @@ describe('e2e tests', () => {
         cy.contains('Nike React Infinity Run');
         cy.contains('RUNNING');
 
-        // go to clothes page
-        cy.contains('Clothes').click()
-        cy.contains('Clothes').should('have.class', 'css-1es8i75');
-        cy.contains('20 / 40 products');
-        cy.contains('PROUD HOODIE UNISEX');
+        // go to watches page
+        cy.contains('Watches').click()
+        cy.contains('Garmin DESCENT™ MK2S');
         cy.contains('SPORT');
+        cy.contains('132.00');
+        cy.contains('15 reviews');
+        cy.contains('Add to Card').click();
+        cy.contains('Garmin DESCENT™ MK2S added to Cart.')
 
         // go to Bags page
         cy.contains('Bags').click()
