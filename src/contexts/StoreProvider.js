@@ -9,7 +9,7 @@ export const StoreProvider = ({ children }) => {
     // filter menu
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const [selectedProduct, setSelectedProduct] = useState('watches');
+    const [selectedProduct, setSelectedProduct] = useState('clothes');
     const [sortCriteria, setSortCriteria] = useState('');
     const [paginationNum, setPaginationNum] = useState(20);
     const [colorsCriteria, setColorsCriteria] = useState([]);

@@ -105,8 +105,7 @@ export const ItemCard = ({ item }) => {
                                 duration: 2000,
                                 isClosable: true,
                                 position: 'top',
-                                containerStyle: { borderRadius: '0', fontSize: "13px" }
-
+                                containerStyle: { borderRadius: '0', fontSize: "13px" },
                             })
                         }
                     >

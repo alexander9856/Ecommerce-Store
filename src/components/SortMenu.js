@@ -13,7 +13,7 @@ export const SortMenu = () => {
         priceAsc: 'Price Ascending'
     }
     return (
-        <Menu placement="bottom-end">
+        <Menu placement="bottom-end" gutter={0}>
             <MenuButton
                 backgroundColor='#fff'
                 border='3px solid #edf2f7'
@@ -25,8 +25,8 @@ export const SortMenu = () => {
             >
                 {sortCriteria ? sortValues[sortCriteria] : "Sort by"}
             </MenuButton>
-            <MenuList zIndex='1'>
-                <MenuItem value='nameDesc' onClick={onClickHandler}>A - Z</MenuItem>
+            <MenuList zIndex='1' w={[160, 160, 185, 185]} minW={160}>
+                <MenuItem value='nameDesc' onClick={onClickHandler}>A - Z</MenuItem >
                 <MenuItem value='nameAsc' onClick={onClickHandler}>Z - A</MenuItem>
                 <MenuItem value='priceDesc' onClick={onClickHandler}>Price Descending</MenuItem>
                 <MenuItem value='priceAsc' onClick={onClickHandler}>Price Ascending</MenuItem>
