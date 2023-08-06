@@ -24,10 +24,10 @@ You can:
 
 # 👀Screenshots
 
-<img src='Screenshots/homePage.png'></img>
-<img src='Screenshots/filtered.png'></img>
-<img src='Screenshots/sortedList.png'></img>
-<img src='Screenshots/addCart.png'></img>
+<img src='Screenshots/home.png'></img>
+<img src='Screenshots/filteredList.png'></img>
+<img src='Screenshots/sorted.png'></img>
+<img src='Screenshots/cart.png'></img>
 
 # 🏆Feedback 
 

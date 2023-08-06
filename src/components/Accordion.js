@@ -29,6 +29,8 @@ export const AccordionMenu = ({ colors }) => {
                                 key={index}
                                 isChecked={colorsCriteria.includes(x)}
                                 onChange={(e) => updateColorsCriteria(e.target.value)}
+                                style={{ '--chakra-colors-blue-500': '#808080' }}
+                                _hover={{ '--chakra-colors-blue-600': '#808080' }}
                             >
                                 {capitalize(x)}
                             </Checkbox>)}
