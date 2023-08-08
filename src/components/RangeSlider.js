@@ -38,7 +38,6 @@ export const SliderRangeInput = () => {
 
             <Box px='0.5rem'>
                 <RangeSlider
-                    aria-label={['min', 'max']}
                     min={0}
                     max={maxPrice}
                     colorScheme='blackAlpha'

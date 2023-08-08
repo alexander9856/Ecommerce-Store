@@ -3,14 +3,12 @@ import { extendTheme, defineStyleConfig } from "@chakra-ui/react";
 const Text = defineStyleConfig({
     variants: {
         listHeader: {
-            fontWeight: '500',
             fontSize: 'lg',
             mb: 2,
             fontWeight: 'bold',
             textAlign: ['center', "left", "left", "left"]
         },
         footerLink: {
-            _hover: { opacity: '80%' },
             cursor: 'pointer',
             textAlign: ['center', "left", "left", "left"],
             _hover: { textDecoration: "underline" }

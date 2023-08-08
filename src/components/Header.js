@@ -20,7 +20,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import logo from '../assets/shop_nexus.png';
 import { useNavigate } from 'react-router';
-const links = ['Clothes', 'Shoes', , 'Watches', 'Bags'];
+const links = ['Clothes', 'Shoes', 'Watches', 'Bags'];
 
 export const Header = () => {
     const { selectedProduct, setSelectedProduct, setPaginationNum, setSortCriteria, setFiltered, setColorsCriteria, setIsFiltered } = useContext(StoreContext)
@@ -62,7 +62,7 @@ export const Header = () => {
                         {links.map((link) => (
                             <Text
                                 variant='navLink'
-                                borderBottom={selectedProduct == link.toLowerCase() ? '2px solid black' : ""}
+                                borderBottom={selectedProduct === link.toLowerCase() ? '2px solid black' : ""}
                                 key={link}
                                 onClick={() => onClickHandler(link)}
                             >
