@@ -52,7 +52,6 @@ export const StoreProvider = ({ children }) => {
         setSortCriteria,
         paginationNum,
         setPaginationNum,
-        categoryProducts,
         dataList,
         updateColorsCriteria,
         colorsCriteria,
